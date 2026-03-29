@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   color: var(--muse-ink);
   background: #2c2f33;
   overflow-x: hidden;
@@ -65,7 +65,7 @@ label {
 }
 
 .section-title {
-  font-family: "Cormorant Garamond", serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.5rem, 5vw, 4.4rem);
   line-height: 0.98;
   letter-spacing: -0.02em;
@@ -184,7 +184,7 @@ label {
 }
 
 .brand-text {
-  font-family: "Cormorant Garamond", serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.25rem;
   color: var(--muse-ink);
 }
@@ -222,7 +222,7 @@ label {
 }
 
 .navbar .nav-link::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0.5rem;
   right: 0.5rem;
@@ -253,13 +253,17 @@ label {
   position: relative;
   padding: 9rem 0 5.5rem;
   background:
-    radial-gradient(circle at top left, rgba(192, 162, 125, 0.14), transparent 36%),
+    radial-gradient(
+      circle at top left,
+      rgba(192, 162, 125, 0.14),
+      transparent 36%
+    ),
     linear-gradient(180deg, #2c2f33 0%, #2c2f33 84%);
 }
 
 .hero-copy h1,
 .page-hero h1 {
-  font-family: "Cormorant Garamond", serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(3.4rem, 7vw, 6.2rem);
   line-height: 0.92;
   letter-spacing: -0.03em;
@@ -284,7 +288,7 @@ label {
 }
 
 .hero-image-shell::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 5% -2% -5% 10%;
   border-radius: var(--radius-lg);
@@ -396,7 +400,7 @@ label {
 
 .booking-card-header h3 {
   margin: 0;
-  font-family: "Cormorant Garamond", serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 2rem;
   font-weight: 500;
 }
@@ -531,7 +535,7 @@ label {
 .stat-item strong {
   display: block;
   font-size: clamp(2rem, 4vw, 3.2rem);
-  font-family: "Cormorant Garamond", serif;
+  font-family: 'Cormorant Garamond', serif;
   line-height: 1;
   margin-bottom: 0.3rem;
 }
@@ -549,7 +553,7 @@ label {
 }
 
 .quote-panel blockquote {
-  font-family: "Cormorant Garamond", serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.9rem, 3vw, 2.8rem);
   line-height: 1.08;
   margin-bottom: 1rem;
