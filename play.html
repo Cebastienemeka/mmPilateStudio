@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Serene Pilates Studio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+  --sage: #7f9f8f;
+  --deep: #2f4f46;
+  --cream: #fff8ef;
+  --soft: #f2e6d8;
+  --rose: #d9a7a0;
+  --text: #25342f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 248, 239, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(47, 79, 70, 0.08);
+}
+
+.nav {
+  max-width: 1150px;
+  margin: auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--deep);
+}
+
+.logo span {
+  color: var(--rose);
+}
+
+.nav-links {
+  display: flex;
+  gap: 26px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--deep);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: var(--rose);
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--deep);
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 130px 24px 80px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 1150px;
+  margin: auto;
+}
+
+.hero-content h1 {
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 1.05;
+  color: var(--deep);
+  margin: 15px 0 22px;
+}
+
+.tagline,
+.section-label {
+  color: var(--rose);
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.hero-text {
+  max-width: 600px;
+  font-size: 18px;
+  color: #5d6b66;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.btn,
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.primary,
+button {
+  background: var(--deep);
+  color: white;
+}
+
+.secondary {
+  background: var(--soft);
+  color: var(--deep);
+}
+
+.btn:hover,
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(47, 79, 70, 0.18);
+}
+
+.hero-card {
+  min-height: 420px;
+  border-radius: 40px;
+  padding: 35px;
+  background: linear-gradient(135deg, rgba(127,159,143,.95), rgba(217,167,160,.85)), url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 25px 60px rgba(47, 79, 70, 0.25);
+}
+
+.hero-card h3 {
+  font-size: 30px;
+}
+
+.section {
+  padding: 90px 24px;
+  max-width: 1150px;
+  margin: auto;
+  text-align: center;
+}
+
+.section h2,
+.about h2,
+.contact h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  color: var(--deep);
+  margin: 10px 0 35px;
+}
+
+.cards,
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card,
+.price-card,
+.contact-box {
+  background: white;
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 18px 45px rgba(47, 79, 70, 0.09);
+}
+
+.card h3,
+.price-card h3 {
+  color: var(--deep);
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.about {
+  background: var(--soft);
+  padding: 90px 24px;
+}
+
+.about > div {
+  max-width: 1050px;
+  margin: auto;
+}
+
+.stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+
+.stats div {
+  background: var(--cream);
+  padding: 22px 28px;
+  border-radius: 22px;
+}
+
+.stats strong {
+  display: block;
+  color: var(--deep);
+  font-size: 34px;
+}
+
+.price {
+  font-size: 46px;
+  font-weight: 900;
+  color: var(--rose);
+  margin: 12px 0;
+}
+
+.featured {
+  background: var(--deep);
+  color: white;
+  transform: scale(1.04);
+}
+
+.featured h3,
+.featured .price {
+  color: white;
+}
+
+.featured button {
+  background: var(--rose);
+}
+
+.contact {
+  padding: 90px 24px;
+  background: linear-gradient(180deg, var(--cream), var(--soft));
+}
+
+.contact-box {
+  max-width: 650px;
+  margin: auto;
+  text-align: center;
+}
+
+form {
+  display: grid;
+  gap: 15px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #e5d8cc;
+  border-radius: 16px;
+  padding: 15px 17px;
+  font: inherit;
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--sage);
+}
+
+#formMessage {
+  margin-top: 15px;
+  color: var(--deep);
+  font-weight: 700;
+}
+
+footer {
+  text-align: center;
+  padding: 26px;
+  background: var(--deep);
+  color: white;
+}
+
+@media (max-width: 800px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: var(--cream);
+    padding: 22px;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hero,
+  .cards,
+  .pricing {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card {
+    min-height: 320px;
+  }
+
+  .featured {
+    transform: none;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="logo">Serene<span>Pilates</span></div>
+      <button class="menu-btn" id="menuBtn">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="tagline">Mindful movement • Strength • Balance</p>
+      <h1>Transform your body with elegant Pilates sessions</h1>
+      <p class="hero-text">Join our peaceful studio and build flexibility, posture, core strength, and confidence through guided Pilates training.</p>
+      <div class="hero-buttons">
+        <a href="#pricing" class="btn primary">Book a Class</a>
+        <a href="#classes" class="btn secondary">View Classes</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Today’s Class</h3>
+      <p>Mat Pilates Flow</p>
+      <span>6:00 PM • Beginner Friendly</span>
+    </div>
+  </section>
+
+  <section class="section" id="classes">
+    <p class="section-label">Our Classes</p>
+    <h2>Choose your perfect flow</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Mat Pilates</h3>
+        <p>Improve posture, flexibility, and body control with calm floor-based movements.</p>
+      </div>
+      <div class="card">
+        <h3>Reformer Pilates</h3>
+        <p>Build strength and balance using guided resistance-based training.</p>
+      </div>
+      <div class="card">
+        <h3>Core & Stretch</h3>
+        <p>A gentle class focused on deep core activation, mobility, and recovery.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div>
+      <p class="section-label">About Us</p>
+      <h2>A calm studio for stronger living</h2>
+      <p>Serene Pilates Studio helps beginners and experienced clients move better, breathe deeper, and feel stronger. Our instructors provide personal attention in a peaceful, welcoming environment.</p>
+      <div class="stats">
+        <div><strong>8+</strong><span>Years Experience</span></div>
+        <div><strong>20+</strong><span>Weekly Classes</span></div>
+        <div><strong>500+</strong><span>Happy Clients</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <p class="section-label">Membership</p>
+    <h2>Simple pricing plans</h2>
+    <div class="pricing">
+      <div class="price-card">
+        <h3>Drop-In</h3>
+        <p class="price">$18</p>
+        <p>One class access</p>
+        <button onclick="choosePlan('Drop-In')">Choose Plan</button>
+      </div>
+      <div class="price-card featured">
+        <h3>Monthly</h3>
+        <p class="price">$89</p>
+        <p>Unlimited group classes</p>
+        <button onclick="choosePlan('Monthly')">Choose Plan</button>
+      </div>
+      <div class="price-card">
+        <h3>Private</h3>
+        <p class="price">$45</p>
+        <p>One-on-one session</p>
+        <button onclick="choosePlan('Private')">Choose Plan</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-box">
+      <p class="section-label">Contact</p>
+      <h2>Start your Pilates journey</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <select required>
+          <option value="">Select Class</option>
+          <option>Mat Pilates</option>
+          <option>Reformer Pilates</option>
+          <option>Core & Stretch</option>
+        </select>
+        <textarea placeholder="Message" rows="4"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p id="formMessage"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Serene Pilates Studio. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+  <footer>
+    <p>© 2026 Serene Pilates Studio. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    const contactForm = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    function choosePlan(plan) {
+      document.getElementById("contact").scrollIntoView({
+        behavior: "smooth"
+      });
+
+      formMessage.textContent = "You selected the " + plan + " plan. Please complete the form below.";
+    }
+
+    contactForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      formMessage.textContent =
+        "Thank you! Your message has been received. We will contact you soon.";
+
+      contactForm.reset();
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    });
+  </script>
+</body>
+</html>
