@@ -30,7 +30,7 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   color: var(--muse-ink);
   background: #2c2f33;
   overflow-x: hidden;
@@ -49,7 +49,17 @@ img {
   max-width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6, p, span, li, strong, label {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+li,
+strong,
+label {
   color: inherit;
 }
 
@@ -65,7 +75,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, strong, label {
 }
 
 .section-title {
-  font-family: "Cormorant Garamond", serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.5rem, 5vw, 4.4rem);
   line-height: 0.98;
   letter-spacing: -0.02em;
@@ -195,19 +205,19 @@ h1, h2, h3, h4, h5, h6, p, span, li, strong, label {
 }
 
 .nav-logo {
-  width: 100px;
-  height: 48px;
+  width: clamp(140px, 12vw, 200px);
+  height: auto;
   object-fit: contain;
   transition: var(--transition);
 }
 
 .navbar.scrolled .nav-logo {
-  width: 90px;
-  height: 42px;
+  width: 110px;
+  height: auto;
 }
 
 .brand-text {
-  font-family: "Cormorant Garamond", serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.25rem;
   color: var(--muse-ink);
 }
@@ -241,7 +251,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, strong, label {
 }
 
 .navbar .nav-link::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0.5rem;
   right: 0.5rem;
@@ -273,7 +283,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, strong, label {
 }
 
 .navbar .nav-link.dropdown-toggle::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0.5rem;
   right: 0.5rem;
@@ -344,14 +354,14 @@ h1, h2, h3, h4, h5, h6, p, span, li, strong, label {
   inset: 0;
   z-index: 2;
   background:
-    linear-gradient(90deg,
+    linear-gradient(
+      90deg,
       rgba(15, 17, 20, 0.72) 0%,
       rgba(15, 17, 20, 0.46) 35%,
       rgba(15, 17, 20, 0.22) 60%,
-      rgba(15, 17, 20, 0.18) 100%),
-    linear-gradient(180deg,
-      rgba(0, 0, 0, 0.28) 0%,
-      rgba(0, 0, 0, 0.18) 100%);
+      rgba(15, 17, 20, 0.18) 100%
+    ),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.18) 100%);
 }
 
 .hero-content {
@@ -366,7 +376,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, strong, label {
 }
 
 .hero-copy h1 {
-  font-family: "Cormorant Garamond", serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(3rem, 6vw, 5.8rem);
   line-height: 0.95;
   letter-spacing: -0.03em;
@@ -505,7 +515,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, strong, label {
 .pricing-price {
   font-size: 2.5rem;
   font-weight: 700;
-  font-family: "Cormorant Garamond", serif;
+  font-family: 'Cormorant Garamond', serif;
   color: var(--muse-accent);
   margin: 1rem 0;
 }
@@ -572,7 +582,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, strong, label {
 
 .booking-card-header h3 {
   margin: 0;
-  font-family: "Cormorant Garamond", serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 2rem;
   font-weight: 500;
 }
@@ -705,7 +715,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, strong, label {
 .stat-item strong {
   display: block;
   font-size: clamp(2rem, 4vw, 3.2rem);
-  font-family: "Cormorant Garamond", serif;
+  font-family: 'Cormorant Garamond', serif;
   line-height: 1;
   margin-bottom: 0.3rem;
 }
@@ -724,7 +734,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, strong, label {
 }
 
 .quote-panel blockquote {
-  font-family: "Cormorant Garamond", serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.9rem, 3vw, 2.8rem);
   line-height: 1.08;
   margin-bottom: 1rem;
@@ -768,7 +778,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, strong, label {
 }
 
 .footer-logo {
-  max-width: 90px;
+  max-width: 120px;
   filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.28));
 }
 
@@ -854,7 +864,9 @@ h1, h2, h3, h4, h5, h6, p, span, li, strong, label {
 [data-reveal] {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 [data-reveal].revealed {
@@ -889,7 +901,7 @@ h1, h2, h3, h4, h5, h6, p, span, li, strong, label {
 
 /* Underline effect for active dropdown items */
 .dropdown-menu-dark .dropdown-item.active::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0.5rem;
   right: 0.5rem;
@@ -981,8 +993,8 @@ h1, h2, h3, h4, h5, h6, p, span, li, strong, label {
 
 @media (max-width: 767.98px) {
   .nav-logo {
-    width: 80px;
-    height: 40px;
+    width: 90px;
+    height: auto;
   }
 
   .brand-text {
