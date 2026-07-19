@@ -342,6 +342,465 @@
       background: #c0a27d;
       transform: scaleX(1);
     }
+
+    /* ============================================================
+   FIX: CENTER PACKAGE CARDS & REDUCE SIZE
+   ============================================================ */
+
+    /* Package grid - centered */
+    .packages-grid {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    /* Package cards - reduced size & centered */
+    .package-card {
+      flex: 0 1 300px;
+      max-width: 300px;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.8rem 1.5rem;
+      background: var(--muse-card);
+      border-radius: 20px;
+      border: 1px solid var(--muse-border);
+      transition: var(--transition);
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .package-card.featured {
+      border-color: #c0a27d;
+      background: linear-gradient(135deg,
+          var(--muse-card),
+          rgba(192, 162, 125, 0.05));
+      transform: scale(1.02);
+      z-index: 2;
+    }
+
+    .package-card .package-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #c0a27d;
+      color: #141518;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 0.25rem 1rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+
+    .package-card .package-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(192, 162, 125, 0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: #c0a27d;
+      margin-bottom: 0.8rem;
+    }
+
+    .package-card .package-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--muse-light);
+      margin-bottom: 0.2rem;
+    }
+
+    .package-card .package-description {
+      font-size: 0.75rem;
+      color: var(--muse-copy);
+      margin-bottom: 0.8rem;
+      line-height: 1.4;
+    }
+
+    .package-card .package-price {
+      margin-bottom: 0.8rem;
+    }
+
+    .package-card .package-price .currency {
+      font-size: 1rem;
+      color: #c0a27d;
+      font-weight: 600;
+    }
+
+    .package-card .package-price .price {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--muse-light);
+    }
+
+    .package-card .package-price .period {
+      font-size: 0.7rem;
+      color: var(--muse-copy);
+    }
+
+    .package-card .package-price .savings {
+      display: block;
+      font-size: 0.65rem;
+      color: #4caf50;
+      font-weight: 600;
+      margin-top: 0.15rem;
+    }
+
+    .package-card .package-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem 0;
+      width: 100%;
+    }
+
+    .package-card .package-features li {
+      font-size: 0.75rem;
+      color: var(--muse-copy);
+      padding: 0.2rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .package-card .package-features li i {
+      color: #c0a27d;
+      font-size: 0.65rem;
+    }
+
+    .package-card .btn-package {
+      display: inline-block;
+      padding: 0.5rem 1.8rem;
+      border-radius: 30px;
+      background: transparent;
+      border: 1.5px solid #c0a27d;
+      color: #c0a27d;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-decoration: none;
+      transition: var(--transition);
+      margin-top: auto;
+    }
+
+    .package-card .btn-package:hover {
+      background: #c0a27d;
+      color: #141518;
+    }
+
+    .package-card .btn-package.featured-btn {
+      background: #c0a27d;
+      color: #141518;
+    }
+
+    .package-card .btn-package.featured-btn:hover {
+      background: #d4b89b;
+      border-color: #d4b89b;
+    }
+
+    .package-card .terms-toggle {
+      margin-top: 0.6rem;
+      width: 100%;
+    }
+
+    .package-card .terms-toggle .terms-link {
+      font-size: 0.6rem;
+      color: var(--muse-copy);
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .package-card .terms-toggle .terms-link:hover {
+      color: #c0a27d;
+    }
+
+    .package-card .terms-toggle .terms-content {
+      display: none;
+      text-align: left;
+      padding: 0.6rem;
+      margin-top: 0.4rem;
+      background: rgba(192, 162, 125, 0.05);
+      border-radius: 12px;
+      border: 1px solid var(--muse-border);
+    }
+
+    .package-card .terms-toggle.open .terms-content {
+      display: block;
+    }
+
+    .package-card .terms-toggle .terms-content h4 {
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #c0a27d;
+    }
+
+    .package-card .terms-toggle .terms-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .package-card .terms-toggle .terms-content ul li {
+      font-size: 0.6rem;
+      color: var(--muse-copy);
+      padding: 0.15rem 0;
+      line-height: 1.3;
+    }
+
+    .package-card .terms-toggle .terms-content ul li strong {
+      color: var(--muse-light);
+    }
+
+    @media (max-width: 768px) {
+      .package-card {
+        flex: 0 1 100%;
+        max-width: 340px;
+        min-height: auto;
+        padding: 1.5rem 1.2rem;
+      }
+
+      .package-card.featured {
+        transform: scale(1);
+      }
+
+      .packages-grid {
+        gap: 1.5rem;
+      }
+    }
+
+    /* Private section - centered */
+    .private-grid {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .private-card {
+      flex: 0 1 300px;
+      max-width: 300px;
+      text-align: center;
+      padding: 1.8rem 1.5rem;
+      background: var(--muse-card);
+      border-radius: 20px;
+      border: 1px solid var(--muse-border);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .private-card:hover {
+      transform: translateY(-5px);
+      border-color: #c0a27d;
+    }
+
+    .private-card .private-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(192, 162, 125, 0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: #c0a27d;
+      margin: 0 auto 0.8rem auto;
+    }
+
+    .private-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--muse-light);
+      margin-bottom: 0.2rem;
+    }
+
+    .private-card .private-price {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #c0a27d;
+      margin-bottom: 0.8rem;
+    }
+
+    .private-card .private-price span {
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--muse-copy);
+    }
+
+    .private-card .private-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.2rem 0;
+      text-align: left;
+      width: 100%;
+    }
+
+    .private-card .private-features li {
+      font-size: 0.75rem;
+      color: var(--muse-copy);
+      padding: 0.2rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .private-card .private-features li i {
+      color: #c0a27d;
+      font-size: 0.65rem;
+      flex-shrink: 0;
+    }
+
+    .private-card .btn-private {
+      display: inline-block;
+      padding: 0.5rem 1.8rem;
+      border-radius: 30px;
+      background: transparent;
+      border: 1.5px solid #c0a27d;
+      color: #c0a27d;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-decoration: none;
+      transition: var(--transition);
+      margin-top: auto;
+    }
+
+    .private-card .btn-private:hover {
+      background: #c0a27d;
+      color: #141518;
+    }
+
+    @media (max-width: 768px) {
+      .private-card {
+        flex: 0 1 100%;
+        max-width: 340px;
+      }
+    }
+
+    /* Fix hero section padding */
+    .packages-hero {
+      padding: 80px 0 40px 0;
+    }
+
+    .packages-hero .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c0a27d;
+      font-weight: 600;
+    }
+
+    .packages-hero .hero-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 3rem;
+      font-weight: 600;
+      color: var(--muse-light);
+      margin: 0.5rem 0;
+    }
+
+    .packages-hero .hero-description {
+      font-size: 1rem;
+      color: var(--muse-copy);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-header .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c0a27d;
+      font-weight: 600;
+    }
+
+    .section-header .section-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--muse-light);
+    }
+
+    .section-header .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--muse-copy);
+    }
+
+    /* Private section terms toggle */
+    .private-card .terms-toggle {
+      margin-top: 0.6rem;
+      width: 100%;
+    }
+
+    .private-card .terms-toggle .terms-link {
+      font-size: 0.6rem;
+      color: var(--muse-copy);
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .private-card .terms-toggle .terms-link:hover {
+      color: #c0a27d;
+    }
+
+    .private-card .terms-toggle .terms-content {
+      display: none;
+      text-align: left;
+      padding: 0.6rem;
+      margin-top: 0.4rem;
+      background: rgba(192, 162, 125, 0.05);
+      border-radius: 12px;
+      border: 1px solid var(--muse-border);
+    }
+
+    .private-card .terms-toggle.open .terms-content {
+      display: block;
+    }
+
+    .private-card .terms-toggle .terms-content h4 {
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #c0a27d;
+    }
+
+    .private-card .terms-toggle .terms-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .private-card .terms-toggle .terms-content ul li {
+      font-size: 0.6rem;
+      color: var(--muse-copy);
+      padding: 0.15rem 0;
+      line-height: 1.3;
+    }
+
+    .private-card .terms-toggle .terms-content ul li strong {
+      color: var(--muse-light);
+    }
   </style>
 </head>
 
@@ -367,7 +826,7 @@
             <a class="nav-link" href="index.html#classes">Classes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="packages.html">Pricing</a>
+            <a class="nav-link active" href="pricing.html">Pricing</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="index.html#schedule">Schedule</a>
@@ -376,7 +835,7 @@
             <a class="nav-link" href="contact.html">Contact</a>
           </li>
           <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-            <a class="btn-muse" href="index.html#schedule">Book a Class</a>
+            <a class="btn-muse" href="schedule.html">Book a Class</a>
           </li>
         </ul>
       </div>
@@ -409,27 +868,19 @@
           <div class="package-icon">
             <i class="fas fa-calendar-day"></i>
           </div>
-          <h3 class="package-title">Drop-in Class</h3>
+          <h3 class="package-title">Drop-in</h3>
           <p class="package-description">
             Perfect for trying us out or occasional visits
           </p>
           <div class="package-price">
             <span class="currency">₦</span>
-            <span class="price">12,000</span>
+            <span class="price">27,500</span>
             <span class="period">/ class</span>
           </div>
           <ul class="package-features">
-            <li><i class="fas fa-check-circle"></i> Single 60-min class</li>
-            <li>
-              <i class="fas fa-check-circle"></i> Access to any class type
-            </li>
-            <li><i class="fas fa-check-circle"></i> Valid for 30 days</li>
-            <li>
-              <i class="fas fa-check-circle"></i> No commitment required
-            </li>
-            <li><i class="fas fa-check-circle"></i> Perfect for beginners</li>
+            <li><i class="fas fa-check-circle"></i> Valid for 1 week</li>
           </ul>
-          <a href="index.html#schedule" class="btn-package">Buy Now</a>
+          <a href="#schedule" class="btn-package">Buy Now</a>
 
           <!-- Terms & Conditions -->
           <div class="terms-toggle">
@@ -473,31 +924,19 @@
           <div class="package-icon">
             <i class="fas fa-ticket-alt"></i>
           </div>
-          <h3 class="package-title">5 Class Pack</h3>
+          <h3 class="package-title">5 Session Pack</h3>
           <p class="package-description">
             Great for consistent weekly practice
           </p>
           <div class="package-price">
             <span class="currency">₦</span>
-            <span class="price">55,000</span>
-            <span class="period">/ 5 classes</span>
-            <span class="savings">Save ₦5,000</span>
+            <span class="price">130,000</span>
+            <span class="period">/ 5 sessions</span>
           </div>
           <ul class="package-features">
-            <li><i class="fas fa-check-circle"></i> 5 x 60-min classes</li>
-            <li>
-              <i class="fas fa-check-circle"></i> Save ₦5,000 vs drop-in
-            </li>
-            <li><i class="fas fa-check-circle"></i> Valid for 3 months</li>
-            <li>
-              <i class="fas fa-check-circle"></i> Shareable with friends &amp;
-              family
-            </li>
-            <li>
-              <i class="fas fa-check-circle"></i> Priority booking window
-            </li>
+            <li><i class="fas fa-check-circle"></i> Valid for 1 month</li>
           </ul>
-          <a href="index.html#schedule" class="btn-package">Buy Now</a>
+          <a href="#schedule" class="btn-package">Buy Now</a>
 
           <!-- Terms & Conditions -->
           <div class="terms-toggle">
@@ -545,31 +984,20 @@
           <div class="package-icon">
             <i class="fas fa-star"></i>
           </div>
-          <h3 class="package-title">10 Class Pack</h3>
+          <h3 class="package-title">10 Session Pack</h3>
           <p class="package-description">
             Best value for regular practitioners
           </p>
           <div class="package-price">
             <span class="currency">₦</span>
-            <span class="price">100,000</span>
-            <span class="period">/ 10 classes</span>
-            <span class="savings">Save ₦20,000</span>
+            <span class="price">260,000</span>
+            <span class="period">/ 10 sessions</span>
+            <!-- <span class="savings">Save ₦20,000</span> -->
           </div>
           <ul class="package-features">
-            <li><i class="fas fa-check-circle"></i> 10 x 60-min classes</li>
-            <li>
-              <i class="fas fa-check-circle"></i> Save ₦20,000 vs drop-in
-            </li>
-            <li><i class="fas fa-check-circle"></i> Valid for 6 months</li>
-            <li>
-              <i class="fas fa-check-circle"></i> Priority booking access
-            </li>
-            <li><i class="fas fa-check-circle"></i> Free mat rental</li>
-            <li>
-              <i class="fas fa-check-circle"></i> Shareable with friends
-            </li>
+            <li><i class="fas fa-check-circle"></i> Valid for 1 month</li>
           </ul>
-          <a href="index.html#schedule" class="btn-package featured-btn">Buy Now</a>
+          <a href="#schedule" class="btn-package featured-btn">Buy Now</a>
 
           <!-- Terms & Conditions -->
           <div class="terms-toggle">
@@ -579,7 +1007,7 @@
               <h4>10 Class Pack Terms & Conditions</h4>
               <ul>
                 <li>
-                  <strong>Validity:</strong> 10-class pack valid for 6 months
+                  <strong>Validity:</strong> 10-session pack valid for 1 month
                   from purchase date.
                 </li>
                 <li>
@@ -592,23 +1020,11 @@
                 </li>
                 <li>
                   <strong>Expiration:</strong> All unused classes expire after
-                  6 months with no refund or extension.
-                </li>
-                <li>
-                  <strong>Priority Booking:</strong> Pack holders get 48-hour
-                  priority booking window.
-                </li>
-                <li>
-                  <strong>Transferability:</strong> Pack can be shared with up
-                  to 3 family members or friends.
+                  1 month with no refund or extension.
                 </li>
                 <li>
                   <strong>Refunds:</strong> Class packs are non-refundable but
                   can be transferred.
-                </li>
-                <li>
-                  <strong>Bonus Benefits:</strong> Free mat rental for all
-                  classes in this pack.
                 </li>
                 <li>
                   <strong>Extensions:</strong> One-time 30-day extension
@@ -622,12 +1038,12 @@
     </div>
   </section>
 
-  <!-- Private Sessions Section -->
+  <!-- Membership Section -->
   <section class="private-section">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
-        <span class="eyebrow">PERSONALIZED ATTENTION</span>
-        <h2 class="section-title">Private Sessions</h2>
+        <span class="eyebrow">MEMBERSHIP</span>
+        <h2 class="section-title">Membership Sessions</h2>
         <p class="section-subtitle">
           One-on-one instruction tailored to your goals
         </p>
@@ -638,8 +1054,8 @@
           <div class="private-icon">
             <i class="fas fa-user"></i>
           </div>
-          <h3>Private Session</h3>
-          <div class="private-price">₦35,000 <span>/ session</span></div>
+          <h3>Membership Session</h3>
+          <div class="private-price">₦299,000 <span>/ for all classes</span></div>
           <ul class="private-features">
             <li>
               <i class="fas fa-check-circle"></i> One-on-one personalized
@@ -655,7 +1071,7 @@
               rehabilitation
             </li>
           </ul>
-          <a href="index.html#schedule" class="btn-private">Book Private</a>
+          <a href="#schedule" class="btn-private">Book Private</a>
 
           <!-- Terms & Conditions -->
           <div class="terms-toggle private-terms">
@@ -685,8 +1101,7 @@
                   ₦160,000 (save ₦15,000).
                 </li>
                 <li>
-                  <strong>Validity:</strong> Single sessions valid for 30
-                  days, packages valid for 6 months.
+                  <strong>Validity:</strong> Single sessions valid for 1 month.
                 </li>
                 <li>
                   <strong>Scheduling:</strong> Sessions subject to instructor
@@ -696,138 +1111,6 @@
             </div>
           </div>
         </div>
-
-        <div class="private-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="private-icon">
-            <i class="fas fa-user-friends"></i>
-          </div>
-          <h3>Duet Session</h3>
-          <div class="private-price">₦50,000 <span>/ session</span></div>
-          <ul class="private-features">
-            <li>
-              <i class="fas fa-check-circle"></i> Semi-private with a friend
-            </li>
-            <li>
-              <i class="fas fa-check-circle"></i> Personalized attention for
-              two
-            </li>
-            <li>
-              <i class="fas fa-check-circle"></i> Great for partners or
-              friends
-            </li>
-            <li>
-              <i class="fas fa-check-circle"></i> Shared experience, shared
-              cost
-            </li>
-          </ul>
-          <a href="index.html#schedule" class="btn-private">Book Duet</a>
-
-          <!-- Terms & Conditions -->
-          <div class="terms-toggle private-terms">
-            <span class="terms-link" onclick="toggleTerms(this)">View Terms & Conditions <i
-                class="fas fa-chevron-down"></i></span>
-            <div class="terms-content">
-              <h4>Duet Session Terms & Conditions</h4>
-              <ul>
-                <li>
-                  <strong>Duration:</strong> 60-minute session for two
-                  participants.
-                </li>
-                <li>
-                  <strong>Cancellation:</strong> 24-hour cancellation notice
-                  required from both participants.
-                </li>
-                <li>
-                  <strong>No-Show:</strong> No-shows from either participant
-                  result in full session charge.
-                </li>
-                <li>
-                  <strong>Partner Policy:</strong> Both participants must be
-                  present for session to proceed.
-                </li>
-                <li>
-                  <strong>Packages:</strong> Purchase 5 duet sessions for
-                  ₦230,000 (save ₦20,000).
-                </li>
-                <li>
-                  <strong>Validity:</strong> Single sessions valid for 30
-                  days, packages valid for 6 months.
-                </li>
-                <li>
-                  <strong>Scheduling:</strong> Both participants must agree on
-                  scheduling time.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Package Comparison Table -->
-  <section class="comparison-section">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="eyebrow">COMPARE PACKAGES</span>
-        <h2 class="section-title">Find what works for you</h2>
-      </div>
-
-      <div class="table-wrapper" data-aos="fade-up">
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th>Features</th>
-              <th>Drop-in</th>
-              <th>5 Pack</th>
-              <th>10 Pack</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Classes Included</td>
-              <td>1 class</td>
-              <td>5 classes</td>
-              <td>10 classes</td>
-            </tr>
-            <tr>
-              <td>Price Per Class</td>
-              <td>₦12,000</td>
-              <td>₦11,000</td>
-              <td>₦10,000</td>
-            </tr>
-            <tr>
-              <td>Validity Period</td>
-              <td>30 days</td>
-              <td>3 months</td>
-              <td>6 months</td>
-            </tr>
-            <tr>
-              <td>Priority Booking</td>
-              <td><i class="fas fa-times"></i></td>
-              <td><i class="fas fa-times"></i></td>
-              <td><i class="fas fa-check"></i></td>
-            </tr>
-            <tr>
-              <td>Free Mat Rental</td>
-              <td><i class="fas fa-times"></i></td>
-              <td><i class="fas fa-times"></i></td>
-              <td><i class="fas fa-check"></i></td>
-            </tr>
-            <tr>
-              <td>Shareable</td>
-              <td><i class="fas fa-times"></i></td>
-              <td><i class="fas fa-check"></i></td>
-              <td><i class="fas fa-check"></i></td>
-            </tr>
-            <tr>
-              <td>Cancellation Window</td>
-              <td>12 hours</td>
-              <td>12 hours</td>
-              <td>12 hours</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
   </section>
@@ -1044,7 +1327,7 @@
           intentional, calming, and strong.
         </p>
         <div class="cta-buttons">
-          <a href="index.html#schedule" class="btn-cta-primary">Book Now</a>
+          <a href="#schedule" class="btn-cta-primary">Book Now</a>
           <a href="membership.html" class="btn-cta-secondary">Explore Membership</a>
         </div>
       </div>
