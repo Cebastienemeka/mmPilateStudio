@@ -1,1472 +1,1529 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MM Pilates | Class Packages</title>
-  <meta name="description"
-    content="MM Pilates Studio class packages - Choose from drop-ins, 5-class packs, and 10-class packs. Flexible options for your Pilates journey." />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MM Pilates | Class Packages</title>
+    <meta
+      name="description"
+      content="MM Pilates Studio class packages - Choose from drop-ins, 5-class packs, and 10-class packs. Flexible options for your Pilates journey."
+    />
 
-  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+    <link rel="icon" type="image/png" href="assets/images/logo.png" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-  <!-- Packages Page CSS -->
-  <link rel="stylesheet" href="css/packages.css" />
+    <!-- Packages Page CSS -->
+    <link rel="stylesheet" href="css/packages.css" />
 
-  <style>
-    /* ------------------------------
+    <style>
+      /* ------------------------------
    CONDENSED TERMS & CONDITIONS
 ------------------------------ */
-    .terms-container {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .terms-summary {
-      background: var(--muse-card);
-      border-radius: 24px;
-      border: 1px solid var(--muse-border);
-      padding: 1.8rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .terms-summary h3 {
-      font-size: 1.2rem;
-      margin-bottom: 1.2rem;
-      color: var(--muse-accent);
-      font-family: "Inter", sans-serif;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-
-    .terms-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-    }
-
-    .terms-grid.two-col {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .terms-item {
-      display: flex;
-      gap: 1rem;
-      padding: 1rem;
-      background: var(--muse-soft);
-      border-radius: 16px;
-      transition: var(--transition);
-    }
-
-    .terms-item:hover {
-      transform: translateY(-2px);
-      border-color: var(--muse-accent);
-      background: rgba(192, 162, 125, 0.05);
-    }
-
-    .terms-item.featured {
-      background: linear-gradient(135deg,
-          var(--muse-soft),
-          rgba(192, 162, 125, 0.08));
-      border-left: 3px solid var(--muse-accent);
-    }
-
-    .terms-icon {
-      width: 45px;
-      height: 45px;
-      background: rgba(192, 162, 125, 0.12);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .terms-icon i {
-      font-size: 1.2rem;
-      color: var(--muse-accent);
-    }
-
-    .terms-content {
-      flex: 1;
-    }
-
-    .terms-content h4 {
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
-      font-family: "Inter", sans-serif;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .terms-content p {
-      font-size: 0.8rem;
-      color: var(--muse-copy);
-      margin-bottom: 0.25rem;
-      line-height: 1.4;
-    }
-
-    .terms-content small {
-      font-size: 0.7rem;
-      color: var(--muse-accent);
-    }
-
-    .badge {
-      background: var(--muse-accent);
-      color: #141518;
-      font-size: 0.6rem;
-      font-weight: 700;
-      padding: 0.2rem 0.5rem;
-      border-radius: 20px;
-      letter-spacing: 0.5px;
-    }
-
-    /* Policies Grid */
-    .policies-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-
-    .policy-item {
-      display: flex;
-      gap: 0.8rem;
-      padding: 0.8rem;
-      background: var(--muse-soft);
-      border-radius: 12px;
-      transition: var(--transition);
-    }
-
-    .policy-item:hover {
-      background: rgba(192, 162, 125, 0.05);
-    }
-
-    .policy-item i {
-      font-size: 1rem;
-      color: var(--muse-accent);
-      margin-top: 0.2rem;
-      width: 24px;
-    }
-
-    .policy-item h4 {
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-      font-family: "Inter", sans-serif;
-    }
-
-    .policy-item p {
-      font-size: 0.7rem;
-      color: var(--muse-copy);
-      line-height: 1.4;
-      margin: 0;
-    }
-
-    /* Terms Note */
-    .terms-note {
-      background: rgba(192, 162, 125, 0.08);
-      border-radius: 16px;
-      padding: 1rem 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      text-align: center;
-      justify-content: center;
-      border: 1px solid var(--muse-border);
-    }
-
-    .terms-note i {
-      font-size: 1.2rem;
-      color: var(--muse-accent);
-    }
-
-    .terms-note p {
-      margin: 0;
-      font-size: 0.85rem;
-      color: var(--muse-copy);
-    }
-
-    .terms-note strong {
-      color: var(--muse-accent);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .terms-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .terms-grid.two-col {
-        grid-template-columns: 1fr;
-      }
-
-      .policies-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .terms-summary {
-        padding: 1.2rem;
-      }
-
-      .terms-item {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .terms-icon {
+      .terms-container {
+        max-width: 1000px;
         margin: 0 auto;
       }
 
-      .terms-note {
-        flex-direction: column;
-        text-align: center;
+      .terms-summary {
+        background: var(--muse-card);
+        border-radius: 24px;
+        border: 1px solid var(--muse-border);
+        padding: 1.8rem;
+        margin-bottom: 1.5rem;
       }
-    }
 
-    /* ------------------------------
+      .terms-summary h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
+        color: var(--muse-accent);
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+
+      .terms-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+      }
+
+      .terms-grid.two-col {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .terms-item {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        background: var(--muse-soft);
+        border-radius: 16px;
+        transition: var(--transition);
+      }
+
+      .terms-item:hover {
+        transform: translateY(-2px);
+        border-color: var(--muse-accent);
+        background: rgba(192, 162, 125, 0.05);
+      }
+
+      .terms-item.featured {
+        background: linear-gradient(
+          135deg,
+          var(--muse-soft),
+          rgba(192, 162, 125, 0.08)
+        );
+        border-left: 3px solid var(--muse-accent);
+      }
+
+      .terms-icon {
+        width: 45px;
+        height: 45px;
+        background: rgba(192, 162, 125, 0.12);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .terms-icon i {
+        font-size: 1.2rem;
+        color: var(--muse-accent);
+      }
+
+      .terms-content {
+        flex: 1;
+      }
+
+      .terms-content h4 {
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .terms-content p {
+        font-size: 0.8rem;
+        color: var(--muse-copy);
+        margin-bottom: 0.25rem;
+        line-height: 1.4;
+      }
+
+      .terms-content small {
+        font-size: 0.7rem;
+        color: var(--muse-accent);
+      }
+
+      .badge {
+        background: var(--muse-accent);
+        color: #141518;
+        font-size: 0.6rem;
+        font-weight: 700;
+        padding: 0.2rem 0.5rem;
+        border-radius: 20px;
+        letter-spacing: 0.5px;
+      }
+
+      /* Policies Grid */
+      .policies-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .policy-item {
+        display: flex;
+        gap: 0.8rem;
+        padding: 0.8rem;
+        background: var(--muse-soft);
+        border-radius: 12px;
+        transition: var(--transition);
+      }
+
+      .policy-item:hover {
+        background: rgba(192, 162, 125, 0.05);
+      }
+
+      .policy-item i {
+        font-size: 1rem;
+        color: var(--muse-accent);
+        margin-top: 0.2rem;
+        width: 24px;
+      }
+
+      .policy-item h4 {
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+        font-family: 'Inter', sans-serif;
+      }
+
+      .policy-item p {
+        font-size: 0.7rem;
+        color: var(--muse-copy);
+        line-height: 1.4;
+        margin: 0;
+      }
+
+      /* Terms Note */
+      .terms-note {
+        background: rgba(192, 162, 125, 0.08);
+        border-radius: 16px;
+        padding: 1rem 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+        justify-content: center;
+        border: 1px solid var(--muse-border);
+      }
+
+      .terms-note i {
+        font-size: 1.2rem;
+        color: var(--muse-accent);
+      }
+
+      .terms-note p {
+        margin: 0;
+        font-size: 0.85rem;
+        color: var(--muse-copy);
+      }
+
+      .terms-note strong {
+        color: var(--muse-accent);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .terms-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .terms-grid.two-col {
+          grid-template-columns: 1fr;
+        }
+
+        .policies-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .terms-summary {
+          padding: 1.2rem;
+        }
+
+        .terms-item {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .terms-icon {
+          margin: 0 auto;
+        }
+
+        .terms-note {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+
+      /* ------------------------------
    ACTIVE PRICING LINK STYLES - FIXED FOR GOLD COLOR
 ------------------------------ */
 
-    /* Make active Pricing link gold */
-    .navbar .nav-link.active {
-      color: #c0a27d !important;
-      position: relative;
-    }
+      /* Make active Pricing link gold */
+      .navbar .nav-link.active {
+        color: #c0a27d !important;
+        position: relative;
+      }
 
-    /* Add underline effect for active link */
-    .navbar .nav-link.active::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -2px;
-      height: 2px;
-      border-radius: 999px;
-      background: #c0a27d;
-      transform: scaleX(1);
-    }
+      /* Add underline effect for active link */
+      .navbar .nav-link.active::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 2px;
+        border-radius: 999px;
+        background: #c0a27d;
+        transform: scaleX(1);
+      }
 
-    /* Keep gold color on hover for active link */
-    .navbar .nav-link.active:hover {
-      color: #d4b89b !important;
-    }
+      /* Keep gold color on hover for active link */
+      .navbar .nav-link.active:hover {
+        color: #d4b89b !important;
+      }
 
-    /* Base nav link styles - ensure they're white by default */
-    .navbar .nav-link {
-      color: #ffffff !important;
-      transition: color 0.3s ease;
-      position: relative;
-    }
+      /* Base nav link styles - ensure they're white by default */
+      .navbar .nav-link {
+        color: #ffffff !important;
+        transition: color 0.3s ease;
+        position: relative;
+      }
 
-    /* Nav link hover - gold */
-    .navbar .nav-link:hover {
-      color: #c0a27d !important;
-    }
+      /* Nav link hover - gold */
+      .navbar .nav-link:hover {
+        color: #c0a27d !important;
+      }
 
-    /* Back to top button styles */
-    .back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: #c0a27d;
-      color: #141518;
-      border: none;
-      font-size: 1.2rem;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-      z-index: 999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+      /* Back to top button styles */
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #c0a27d;
+        color: #141518;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-    .back-to-top.show {
-      opacity: 1;
-      visibility: visible;
-    }
+      .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+      }
 
-    .back-to-top:hover {
-      transform: translateY(-3px);
-      background: #d4b89b;
-    }
+      .back-to-top:hover {
+        transform: translateY(-3px);
+        background: #d4b89b;
+      }
 
-    /* Navbar scroll effect */
-    .navbar.scrolled {
-      background: rgba(20, 21, 24, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    }
+      /* Navbar scroll effect */
+      .navbar.scrolled {
+        background: rgba(20, 21, 24, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      }
 
-    .navbar {
-      transition: all 0.3s ease;
-    }
+      .navbar {
+        transition: all 0.3s ease;
+      }
 
-    /* Dropdown menu styles - keep these for consistency */
-    .dropdown-menu-dark .dropdown-item.active {
-      background: transparent;
-      color: #c0a27d !important;
-      position: relative;
-    }
+      /* Dropdown menu styles - keep these for consistency */
+      .dropdown-menu-dark .dropdown-item.active {
+        background: transparent;
+        color: #c0a27d !important;
+        position: relative;
+      }
 
-    .dropdown-menu-dark .dropdown-item.active::after {
-      content: '';
-      position: absolute;
-      left: 0.5rem;
-      right: 0.5rem;
-      bottom: 0.1rem;
-      height: 2px;
-      border-radius: 999px;
-      background: #c0a27d;
-      transform: scaleX(1);
-    }
+      .dropdown-menu-dark .dropdown-item.active::after {
+        content: '';
+        position: absolute;
+        left: 0.5rem;
+        right: 0.5rem;
+        bottom: 0.1rem;
+        height: 2px;
+        border-radius: 999px;
+        background: #c0a27d;
+        transform: scaleX(1);
+      }
 
-    /* ============================================================
+      /* ============================================================
    FIX: CENTER PACKAGE CARDS & REDUCE SIZE
    ============================================================ */
 
-    /* Package grid - centered */
-    .packages-grid {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
+      /* Package grid - centered */
+      .packages-grid {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
 
-    /* Package cards - reduced size & centered */
-    .package-card {
-      flex: 0 1 300px;
-      max-width: 300px;
-      min-height: 380px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 1.8rem 1.5rem;
-      background: var(--muse-card);
-      border-radius: 20px;
-      border: 1px solid var(--muse-border);
-      transition: var(--transition);
-      position: relative;
-      margin: 0 auto;
-    }
-
-    .package-card.featured {
-      border-color: #c0a27d;
-      background: linear-gradient(135deg,
-          var(--muse-card),
-          rgba(192, 162, 125, 0.05));
-      transform: scale(1.02);
-      z-index: 2;
-    }
-
-    .package-card .package-badge {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #c0a27d;
-      color: #141518;
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      padding: 0.25rem 1rem;
-      border-radius: 20px;
-      text-transform: uppercase;
-    }
-
-    .package-card .package-icon {
-      width: 50px;
-      height: 50px;
-      background: rgba(192, 162, 125, 0.12);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      color: #c0a27d;
-      margin-bottom: 0.8rem;
-    }
-
-    .package-card .package-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--muse-light);
-      margin-bottom: 0.2rem;
-    }
-
-    .package-card .package-description {
-      font-size: 0.75rem;
-      color: var(--muse-copy);
-      margin-bottom: 0.8rem;
-      line-height: 1.4;
-    }
-
-    .package-card .package-price {
-      margin-bottom: 0.8rem;
-    }
-
-    .package-card .package-price .currency {
-      font-size: 1rem;
-      color: #c0a27d;
-      font-weight: 600;
-    }
-
-    .package-card .package-price .price {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--muse-light);
-    }
-
-    .package-card .package-price .period {
-      font-size: 0.7rem;
-      color: var(--muse-copy);
-    }
-
-    .package-card .package-price .savings {
-      display: block;
-      font-size: 0.65rem;
-      color: #4caf50;
-      font-weight: 600;
-      margin-top: 0.15rem;
-    }
-
-    .package-card .package-features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1rem 0;
-      width: 100%;
-    }
-
-    .package-card .package-features li {
-      font-size: 0.75rem;
-      color: var(--muse-copy);
-      padding: 0.2rem 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-    }
-
-    .package-card .package-features li i {
-      color: #c0a27d;
-      font-size: 0.65rem;
-    }
-
-    .package-card .btn-package {
-      display: inline-block;
-      padding: 0.5rem 1.8rem;
-      border-radius: 30px;
-      background: transparent;
-      border: 1.5px solid #c0a27d;
-      color: #c0a27d;
-      font-weight: 600;
-      font-size: 0.75rem;
-      text-decoration: none;
-      transition: var(--transition);
-      margin-top: auto;
-    }
-
-    .package-card .btn-package:hover {
-      background: #c0a27d;
-      color: #141518;
-    }
-
-    .package-card .btn-package.featured-btn {
-      background: #c0a27d;
-      color: #141518;
-    }
-
-    .package-card .btn-package.featured-btn:hover {
-      background: #d4b89b;
-      border-color: #d4b89b;
-    }
-
-    .package-card .terms-toggle {
-      margin-top: 0.6rem;
-      width: 100%;
-    }
-
-    .package-card .terms-toggle .terms-link {
-      font-size: 0.6rem;
-      color: var(--muse-copy);
-      cursor: pointer;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .package-card .terms-toggle .terms-link:hover {
-      color: #c0a27d;
-    }
-
-    .package-card .terms-toggle .terms-content {
-      display: none;
-      text-align: left;
-      padding: 0.6rem;
-      margin-top: 0.4rem;
-      background: rgba(192, 162, 125, 0.05);
-      border-radius: 12px;
-      border: 1px solid var(--muse-border);
-    }
-
-    .package-card .terms-toggle.open .terms-content {
-      display: block;
-    }
-
-    .package-card .terms-toggle .terms-content h4 {
-      font-size: 0.7rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-      color: #c0a27d;
-    }
-
-    .package-card .terms-toggle .terms-content ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .package-card .terms-toggle .terms-content ul li {
-      font-size: 0.6rem;
-      color: var(--muse-copy);
-      padding: 0.15rem 0;
-      line-height: 1.3;
-    }
-
-    .package-card .terms-toggle .terms-content ul li strong {
-      color: var(--muse-light);
-    }
-
-    @media (max-width: 768px) {
+      /* Package cards - reduced size & centered */
       .package-card {
-        flex: 0 1 100%;
-        max-width: 340px;
-        min-height: auto;
-        padding: 1.5rem 1.2rem;
+        flex: 0 1 300px;
+        max-width: 300px;
+        min-height: 380px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.8rem 1.5rem;
+        background: var(--muse-card);
+        border-radius: 20px;
+        border: 1px solid var(--muse-border);
+        transition: var(--transition);
+        position: relative;
+        margin: 0 auto;
       }
 
       .package-card.featured {
-        transform: scale(1);
+        border-color: #c0a27d;
+        background: linear-gradient(
+          135deg,
+          var(--muse-card),
+          rgba(192, 162, 125, 0.05)
+        );
+        transform: scale(1.02);
+        z-index: 2;
       }
 
-      .packages-grid {
-        gap: 1.5rem;
+      .package-card .package-badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #c0a27d;
+        color: #141518;
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        padding: 0.25rem 1rem;
+        border-radius: 20px;
+        text-transform: uppercase;
       }
-    }
 
-    /* Private section - centered */
-    .private-grid {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
+      .package-card .package-icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(192, 162, 125, 0.12);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        color: #c0a27d;
+        margin-bottom: 0.8rem;
+      }
 
-    .private-card {
-      flex: 0 1 300px;
-      max-width: 300px;
-      text-align: center;
-      padding: 1.8rem 1.5rem;
-      background: var(--muse-card);
-      border-radius: 20px;
-      border: 1px solid var(--muse-border);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+      .package-card .package-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--muse-light);
+        margin-bottom: 0.2rem;
+      }
 
-    .private-card:hover {
-      transform: translateY(-5px);
-      border-color: #c0a27d;
-    }
+      .package-card .package-description {
+        font-size: 0.75rem;
+        color: var(--muse-copy);
+        margin-bottom: 0.8rem;
+        line-height: 1.4;
+      }
 
-    .private-card .private-icon {
-      width: 50px;
-      height: 50px;
-      background: rgba(192, 162, 125, 0.12);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      color: #c0a27d;
-      margin: 0 auto 0.8rem auto;
-    }
+      .package-card .package-price {
+        margin-bottom: 0.8rem;
+      }
 
-    .private-card h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--muse-light);
-      margin-bottom: 0.2rem;
-    }
+      .package-card .package-price .currency {
+        font-size: 1rem;
+        color: #c0a27d;
+        font-weight: 600;
+      }
 
-    .private-card .private-price {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #c0a27d;
-      margin-bottom: 0.8rem;
-    }
+      .package-card .package-price .price {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--muse-light);
+      }
 
-    .private-card .private-price span {
-      font-size: 0.7rem;
-      font-weight: 400;
-      color: var(--muse-copy);
-    }
+      .package-card .package-price .period {
+        font-size: 0.7rem;
+        color: var(--muse-copy);
+      }
 
-    .private-card .private-features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1.2rem 0;
-      text-align: left;
-      width: 100%;
-    }
+      .package-card .package-price .savings {
+        display: block;
+        font-size: 0.65rem;
+        color: #4caf50;
+        font-weight: 600;
+        margin-top: 0.15rem;
+      }
 
-    .private-card .private-features li {
-      font-size: 0.75rem;
-      color: var(--muse-copy);
-      padding: 0.2rem 0;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+      .package-card .package-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1rem 0;
+        width: 100%;
+      }
 
-    .private-card .private-features li i {
-      color: #c0a27d;
-      font-size: 0.65rem;
-      flex-shrink: 0;
-    }
+      .package-card .package-features li {
+        font-size: 0.75rem;
+        color: var(--muse-copy);
+        padding: 0.2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+      }
 
-    .private-card .btn-private {
-      display: inline-block;
-      padding: 0.5rem 1.8rem;
-      border-radius: 30px;
-      background: transparent;
-      border: 1.5px solid #c0a27d;
-      color: #c0a27d;
-      font-weight: 600;
-      font-size: 0.75rem;
-      text-decoration: none;
-      transition: var(--transition);
-      margin-top: auto;
-    }
+      .package-card .package-features li i {
+        color: #c0a27d;
+        font-size: 0.65rem;
+      }
 
-    .private-card .btn-private:hover {
-      background: #c0a27d;
-      color: #141518;
-    }
+      .package-card .btn-package {
+        display: inline-block;
+        padding: 0.5rem 1.8rem;
+        border-radius: 30px;
+        background: transparent;
+        border: 1.5px solid #c0a27d;
+        color: #c0a27d;
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-decoration: none;
+        transition: var(--transition);
+        margin-top: auto;
+      }
 
-    @media (max-width: 768px) {
+      .package-card .btn-package:hover {
+        background: #c0a27d;
+        color: #141518;
+      }
+
+      .package-card .btn-package.featured-btn {
+        background: #c0a27d;
+        color: #141518;
+      }
+
+      .package-card .btn-package.featured-btn:hover {
+        background: #d4b89b;
+        border-color: #d4b89b;
+      }
+
+      .package-card .terms-toggle {
+        margin-top: 0.6rem;
+        width: 100%;
+      }
+
+      .package-card .terms-toggle .terms-link {
+        font-size: 0.6rem;
+        color: var(--muse-copy);
+        cursor: pointer;
+        transition: var(--transition);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      .package-card .terms-toggle .terms-link:hover {
+        color: #c0a27d;
+      }
+
+      .package-card .terms-toggle .terms-content {
+        display: none;
+        text-align: left;
+        padding: 0.6rem;
+        margin-top: 0.4rem;
+        background: rgba(192, 162, 125, 0.05);
+        border-radius: 12px;
+        border: 1px solid var(--muse-border);
+      }
+
+      .package-card .terms-toggle.open .terms-content {
+        display: block;
+      }
+
+      .package-card .terms-toggle .terms-content h4 {
+        font-size: 0.7rem;
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+        color: #c0a27d;
+      }
+
+      .package-card .terms-toggle .terms-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .package-card .terms-toggle .terms-content ul li {
+        font-size: 0.6rem;
+        color: var(--muse-copy);
+        padding: 0.15rem 0;
+        line-height: 1.3;
+      }
+
+      .package-card .terms-toggle .terms-content ul li strong {
+        color: var(--muse-light);
+      }
+
+      @media (max-width: 768px) {
+        .package-card {
+          flex: 0 1 100%;
+          max-width: 340px;
+          min-height: auto;
+          padding: 1.5rem 1.2rem;
+        }
+
+        .package-card.featured {
+          transform: scale(1);
+        }
+
+        .packages-grid {
+          gap: 1.5rem;
+        }
+      }
+
+      /* Private section - centered */
+      .private-grid {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
       .private-card {
-        flex: 0 1 100%;
-        max-width: 340px;
+        flex: 0 1 300px;
+        max-width: 300px;
+        text-align: center;
+        padding: 1.8rem 1.5rem;
+        background: var(--muse-card);
+        border-radius: 20px;
+        border: 1px solid var(--muse-border);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
-    }
 
-    /* Fix hero section padding */
-    .packages-hero {
-      padding: 80px 0 40px 0;
-    }
+      .private-card:hover {
+        transform: translateY(-5px);
+        border-color: #c0a27d;
+      }
 
-    .packages-hero .eyebrow {
-      font-size: 0.7rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #c0a27d;
-      font-weight: 600;
-    }
+      .private-card .private-icon {
+        width: 50px;
+        height: 50px;
+        background: rgba(192, 162, 125, 0.12);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        color: #c0a27d;
+        margin: 0 auto 0.8rem auto;
+      }
 
-    .packages-hero .hero-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 3rem;
-      font-weight: 600;
-      color: var(--muse-light);
-      margin: 0.5rem 0;
-    }
+      .private-card h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--muse-light);
+        margin-bottom: 0.2rem;
+      }
 
-    .packages-hero .hero-description {
-      font-size: 1rem;
-      color: var(--muse-copy);
-      max-width: 600px;
-      margin: 0 auto;
-    }
+      .private-card .private-price {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #c0a27d;
+        margin-bottom: 0.8rem;
+      }
 
-    .section-header {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
+      .private-card .private-price span {
+        font-size: 0.7rem;
+        font-weight: 400;
+        color: var(--muse-copy);
+      }
 
-    .section-header .eyebrow {
-      font-size: 0.7rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #c0a27d;
-      font-weight: 600;
-    }
+      .private-card .private-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.2rem 0;
+        text-align: left;
+        width: 100%;
+      }
 
-    .section-header .section-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 2.2rem;
-      font-weight: 600;
-      color: var(--muse-light);
-    }
+      .private-card .private-features li {
+        font-size: 0.75rem;
+        color: var(--muse-copy);
+        padding: 0.2rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
 
-    .section-header .section-subtitle {
-      font-size: 0.95rem;
-      color: var(--muse-copy);
-    }
+      .private-card .private-features li i {
+        color: #c0a27d;
+        font-size: 0.65rem;
+        flex-shrink: 0;
+      }
 
-    /* Private section terms toggle */
-    .private-card .terms-toggle {
-      margin-top: 0.6rem;
-      width: 100%;
-    }
+      .private-card .btn-private {
+        display: inline-block;
+        padding: 0.5rem 1.8rem;
+        border-radius: 30px;
+        background: transparent;
+        border: 1.5px solid #c0a27d;
+        color: #c0a27d;
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-decoration: none;
+        transition: var(--transition);
+        margin-top: auto;
+      }
 
-    .private-card .terms-toggle .terms-link {
-      font-size: 0.6rem;
-      color: var(--muse-copy);
-      cursor: pointer;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
+      .private-card .btn-private:hover {
+        background: #c0a27d;
+        color: #141518;
+      }
 
-    .private-card .terms-toggle .terms-link:hover {
-      color: #c0a27d;
-    }
+      @media (max-width: 768px) {
+        .private-card {
+          flex: 0 1 100%;
+          max-width: 340px;
+        }
+      }
 
-    .private-card .terms-toggle .terms-content {
-      display: none;
-      text-align: left;
-      padding: 0.6rem;
-      margin-top: 0.4rem;
-      background: rgba(192, 162, 125, 0.05);
-      border-radius: 12px;
-      border: 1px solid var(--muse-border);
-    }
+      /* Fix hero section padding */
+      .packages-hero {
+        padding: 80px 0 40px 0;
+      }
 
-    .private-card .terms-toggle.open .terms-content {
-      display: block;
-    }
+      .packages-hero .eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #c0a27d;
+        font-weight: 600;
+      }
 
-    .private-card .terms-toggle .terms-content h4 {
-      font-size: 0.7rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-      color: #c0a27d;
-    }
+      .packages-hero .hero-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3rem;
+        font-weight: 600;
+        color: var(--muse-light);
+        margin: 0.5rem 0;
+      }
 
-    .private-card .terms-toggle .terms-content ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+      .packages-hero .hero-description {
+        font-size: 1rem;
+        color: var(--muse-copy);
+        max-width: 600px;
+        margin: 0 auto;
+      }
 
-    .private-card .terms-toggle .terms-content ul li {
-      font-size: 0.6rem;
-      color: var(--muse-copy);
-      padding: 0.15rem 0;
-      line-height: 1.3;
-    }
+      .section-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
 
-    .private-card .terms-toggle .terms-content ul li strong {
-      color: var(--muse-light);
-    }
-  </style>
-</head>
+      .section-header .eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #c0a27d;
+        font-weight: 600;
+      }
 
-<body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/images/mm-logo.png" alt="MM Pilates Logo" class="nav-logo" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="classes.html">Classes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="pricing.html">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="schedule.html">Schedule</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-            <a class="btn-muse" href="schedule.html">Book a Class</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+      .section-header .section-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: var(--muse-light);
+      }
 
-  <!-- Hero Section -->
-  <section class="packages-hero">
-    <div class="container">
-      <div class="row justify-content-center text-center">
-        <div class="col-lg-8" data-aos="fade-up">
-          <span class="eyebrow">FLEXIBLE OPTIONS</span>
-          <h1 class="hero-title">Class Packages</h1>
-          <p class="hero-description">
-            Choose the package that fits your rhythm. Perfect for those who
-            prefer flexibility without commitment.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+      .section-header .section-subtitle {
+        font-size: 0.95rem;
+        color: var(--muse-copy);
+      }
 
-  <!-- Packages Cards -->
-  <section class="packages-section">
-    <div class="container">
-      <div class="packages-grid">
-        <!-- Drop-in Package -->
-        <div class="package-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="package-badge"></div>
-          <div class="package-icon">
-            <i class="fas fa-calendar-day"></i>
-          </div>
-          <h3 class="package-title">Drop-in</h3>
-          <p class="package-description">
-            Perfect for trying us out or occasional visits
-          </p>
-          <div class="package-price">
-            <span class="currency">₦</span>
-            <span class="price">27,500</span>
-            <span class="period">/ class</span>
-          </div>
-          <ul class="package-features">
-            <li><i class="fas fa-check-circle"></i> Valid for 1 week</li>
-          </ul>
-          <a href="#schedule" class="btn-package">Buy Now</a>
+      /* Private section terms toggle */
+      .private-card .terms-toggle {
+        margin-top: 0.6rem;
+        width: 100%;
+      }
 
-          <!-- Terms & Conditions -->
-          <div class="terms-toggle">
-            <span class="terms-link" onclick="toggleTerms(this)">View Terms & Conditions <i
-                class="fas fa-chevron-down"></i></span>
-            <div class="terms-content">
-              <h4>Drop-in Class Terms & Conditions</h4>
-              <ul>
-                <li>
-                  <strong>Validity:</strong> Single class pass valid for 30
-                  days from purchase date.
-                </li>
-                <li>
-                  <strong>Cancellation:</strong> Cancellations must be made at
-                  least 12 hours before class start time to retain credit.
-                </li>
-                <li>
-                  <strong>No-Show Policy:</strong> Failure to cancel within 12
-                  hours or no-show results in loss of class credit.
-                </li>
-                <li>
-                  <strong>Expiration:</strong> Unused classes expire after 30
-                  days with no refund or extension.
-                </li>
-                <li>
-                  <strong>Transferability:</strong> Drop-in passes are
-                  non-transferable and non-refundable.
-                </li>
-                <li>
-                  <strong>First-Time Offer:</strong> First-time clients
-                  receive 20% off their first drop-in class.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      .private-card .terms-toggle .terms-link {
+        font-size: 0.6rem;
+        color: var(--muse-copy);
+        cursor: pointer;
+        transition: var(--transition);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
 
-        <!-- 5 Class Pack -->
-        <div class="package-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="package-badge"></div>
-          <div class="package-icon">
-            <i class="fas fa-ticket-alt"></i>
-          </div>
-          <h3 class="package-title">5 Session Pack</h3>
-          <p class="package-description">
-            Great for consistent weekly practice
-          </p>
-          <div class="package-price">
-            <span class="currency">₦</span>
-            <span class="price">130,000</span>
-            <span class="period">/ 5 sessions</span>
-          </div>
-          <ul class="package-features">
-            <li><i class="fas fa-check-circle"></i> Valid for 1 month</li>
-          </ul>
-          <a href="#schedule" class="btn-package">Buy Now</a>
+      .private-card .terms-toggle .terms-link:hover {
+        color: #c0a27d;
+      }
 
-          <!-- Terms & Conditions -->
-          <div class="terms-toggle">
-            <span class="terms-link" onclick="toggleTerms(this)">View Terms & Conditions <i
-                class="fas fa-chevron-down"></i></span>
-            <div class="terms-content">
-              <h4>5 Class Pack Terms & Conditions</h4>
-              <ul>
-                <li>
-                  <strong>Validity:</strong> 5-class pack valid for 3 months
-                  from purchase date.
-                </li>
-                <li>
-                  <strong>Cancellation:</strong> 12-hour cancellation policy
-                  applies. Late cancellations count as class used.
-                </li>
-                <li>
-                  <strong>No-Show Policy:</strong> No-shows result in loss of
-                  class credit.
-                </li>
-                <li>
-                  <strong>Expiration:</strong> All unused classes expire after
-                  3 months with no refund or extension.
-                </li>
-                <li>
-                  <strong>Transferability:</strong> Pack can be shared with
-                  friends and family members.
-                </li>
-                <li>
-                  <strong>Refunds:</strong> Class packs are non-refundable but
-                  can be transferred to another person.
-                </li>
-                <li>
-                  <strong>Extensions:</strong> Extensions may be granted for
-                  medical reasons with doctor's note.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      .private-card .terms-toggle .terms-content {
+        display: none;
+        text-align: left;
+        padding: 0.6rem;
+        margin-top: 0.4rem;
+        background: rgba(192, 162, 125, 0.05);
+        border-radius: 12px;
+        border: 1px solid var(--muse-border);
+      }
 
-        <!-- 10 Class Pack - Featured -->
-        <div class="package-card featured" data-aos="fade-up" data-aos-delay="200">
-          <div class="package-badge">MOST POPULAR</div>
-          <div class="package-icon">
-            <i class="fas fa-star"></i>
-          </div>
-          <h3 class="package-title">10 Session Pack</h3>
-          <p class="package-description">
-            Best value for regular practitioners
-          </p>
-          <div class="package-price">
-            <span class="currency">₦</span>
-            <span class="price">260,000</span>
-            <span class="period">/ 10 sessions</span>
-            <!-- <span class="savings">Save ₦20,000</span> -->
-          </div>
-          <ul class="package-features">
-            <li><i class="fas fa-check-circle"></i> Valid for 1 month</li>
-          </ul>
-          <a href="#schedule" class="btn-package featured-btn">Buy Now</a>
+      .private-card .terms-toggle.open .terms-content {
+        display: block;
+      }
 
-          <!-- Terms & Conditions -->
-          <div class="terms-toggle">
-            <span class="terms-link" onclick="toggleTerms(this)">View Terms & Conditions <i
-                class="fas fa-chevron-down"></i></span>
-            <div class="terms-content">
-              <h4>10 Class Pack Terms & Conditions</h4>
-              <ul>
-                <li>
-                  <strong>Validity:</strong> 10-session pack valid for 1 month
-                  from purchase date.
-                </li>
-                <li>
-                  <strong>Cancellation:</strong> 12-hour cancellation policy
-                  applies. Late cancellations count as class used.
-                </li>
-                <li>
-                  <strong>No-Show Policy:</strong> No-shows result in loss of
-                  class credit.
-                </li>
-                <li>
-                  <strong>Expiration:</strong> All unused classes expire after
-                  1 month with no refund or extension.
-                </li>
-                <li>
-                  <strong>Refunds:</strong> Class packs are non-refundable but
-                  can be transferred.
-                </li>
-                <li>
-                  <strong>Extensions:</strong> One-time 30-day extension
-                  available with written request.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      .private-card .terms-toggle .terms-content h4 {
+        font-size: 0.7rem;
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+        color: #c0a27d;
+      }
 
-  <!-- Membership Section -->
-  <section class="private-section">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="eyebrow">MEMBERSHIP</span>
-        <h2 class="section-title">Membership Sessions</h2>
-        <p class="section-subtitle">
-          One-on-one instruction tailored to your goals
-        </p>
-      </div>
+      .private-card .terms-toggle .terms-content ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
 
-      <div class="private-grid">
-        <div class="private-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="private-icon">
-            <i class="fas fa-user"></i>
-          </div>
-          <h3>Membership Session</h3>
-          <div class="private-price">₦299,000 <span>/ for all classes</span></div>
-          <ul class="private-features">
-            <li>
-              <i class="fas fa-check-circle"></i> One-on-one personalized
-              instruction
+      .private-card .terms-toggle .terms-content ul li {
+        font-size: 0.6rem;
+        color: var(--muse-copy);
+        padding: 0.15rem 0;
+        line-height: 1.3;
+      }
+
+      .private-card .terms-toggle .terms-content ul li strong {
+        color: var(--muse-light);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="assets/images/mm-logo.png"
+            alt="MM Pilates Logo"
+            class="nav-logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
             </li>
-            <li>
-              <i class="fas fa-check-circle"></i> Tailored to your specific
-              goals
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
             </li>
-            <li><i class="fas fa-check-circle"></i> Flexible scheduling</li>
-            <li>
-              <i class="fas fa-check-circle"></i> Perfect for beginners or
-              rehabilitation
+            <li class="nav-item">
+              <a class="nav-link" href="classes.html">Classes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="pricing.html">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+              <a class="btn-muse" href="schedule.html">Book a Class</a>
             </li>
           </ul>
-          <a href="#schedule" class="btn-private">Book Private</a>
-
-          <!-- Terms & Conditions -->
-          <div class="terms-toggle private-terms">
-            <span class="terms-link" onclick="toggleTerms(this)">View Terms & Conditions <i
-                class="fas fa-chevron-down"></i></span>
-            <div class="terms-content">
-              <h4>Private Session Terms & Conditions</h4>
-              <ul>
-                <li>
-                  <strong>Duration:</strong> 60-minute one-on-one session with
-                  certified instructor.
-                </li>
-                <li>
-                  <strong>Cancellation:</strong> 24-hour cancellation notice
-                  required to avoid full session charge.
-                </li>
-                <li>
-                  <strong>Late Cancellation:</strong> Cancellations within 24
-                  hours incur 50% session fee.
-                </li>
-                <li>
-                  <strong>No-Show:</strong> No-shows result in full session
-                  charge with no rescheduling.
-                </li>
-                <li>
-                  <strong>Packages:</strong> Purchase 5 private sessions for
-                  ₦160,000 (save ₦15,000).
-                </li>
-                <li>
-                  <strong>Validity:</strong> Single sessions valid for 1 month.
-                </li>
-                <li>
-                  <strong>Scheduling:</strong> Sessions subject to instructor
-                  availability.
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- FAQ Section -->
-  <section class="faq-section">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="eyebrow">COMMON QUESTIONS</span>
-        <h2 class="section-title">Package FAQs</h2>
-      </div>
-
-      <div class="faq-grid">
-        <div class="faq-item" data-aos="fade-up">
-          <div class="faq-question">
-            <h4>Can I share my class pack with friends?</h4>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>
-              Yes! Our 5-class and 10-class packs are shareable with friends
-              and family. Drop-in passes are non-transferable. When booking,
-              simply specify who will be attending each class.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
-          <div class="faq-question">
-            <h4>
-              What happens if I don't use all my classes before expiration?
-            </h4>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>
-              Unused classes expire after the validity period and cannot be
-              refunded. We recommend planning your classes regularly.
-              Extensions may be granted for medical reasons with proper
-              documentation.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
-          <div class="faq-question">
-            <h4>What is your cancellation policy?</h4>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>
-              We require 12 hours notice for cancellations. Late cancellations
-              or no-shows will result in the loss of that class credit from
-              your pack. Private sessions require 24-hour notice.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
-          <div class="faq-question">
-            <h4>Can I upgrade from a smaller pack to a larger one?</h4>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>
-              Yes! You can upgrade at any time by paying the difference in
-              price. The remaining classes from your current pack will be
-              added to your new pack with the extended validity period.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
-          <div class="faq-question">
-            <h4>Do you offer refunds on class packs?</h4>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>
-              Class packs are non-refundable but can be transferred to another
-              person. If you have a medical condition preventing
-              participation, we may offer extensions with a doctor's note.
+    <!-- Hero Section -->
+    <section class="packages-hero">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8" data-aos="fade-up">
+            <span class="eyebrow">FLEXIBLE OPTIONS</span>
+            <h1 class="hero-title">Class Packages</h1>
+            <p class="hero-description">
+              Choose the package that fits your rhythm. Perfect for those who
+              prefer flexibility without commitment.
             </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Terms & Conditions Section -->
-  <section class="terms-section">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="eyebrow">LEGAL</span>
-        <h2 class="section-title">Terms & Conditions</h2>
-        <p class="section-subtitle">
-          Please read our terms carefully before purchasing
-        </p>
-      </div>
+    <!-- Packages Cards -->
+    <section class="packages-section">
+      <div class="container">
+        <div class="packages-grid">
+          <!-- Drop-in Package -->
+          <div class="package-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="package-badge"></div>
+            <div class="package-icon">
+              <i class="fas fa-calendar-day"></i>
+            </div>
+            <h3 class="package-title">Drop-in</h3>
+            <p class="package-description">
+              Perfect for trying us out or occasional visits
+            </p>
+            <div class="package-price">
+              <span class="currency">₦</span>
+              <span class="price">27,500</span>
+              <span class="period">/ class</span>
+            </div>
+            <ul class="package-features">
+              <li><i class="fas fa-check-circle"></i> Valid for 1 week</li>
+            </ul>
+            <a
+              href="https://www.momoyoga.com/mmstudio/product/205741/buy/login"
+              class="btn-package"
+              >Buy Now</a
+            >
 
-      <div class="terms-container" data-aos="fade-up">
-        <!-- General Policies -->
-        <div class="terms-summary">
-          <h3>General Policies</h3>
-          <div class="policies-grid">
-            <div class="policy-item">
-              <i class="fas fa-clock"></i>
-              <div>
-                <h4>Cancellation Policy</h4>
-                <p>
-                  12-hour notice for group classes · 24-hour notice for
-                  private/duet sessions
-                </p>
+            <!-- Terms & Conditions -->
+            <div class="terms-toggle">
+              <span class="terms-link" onclick="toggleTerms(this)"
+                >View Terms & Conditions <i class="fas fa-chevron-down"></i
+              ></span>
+              <div class="terms-content">
+                <h4>Drop-in Class Terms & Conditions</h4>
+                <ul>
+                  <li>
+                    <strong>Validity:</strong> Single class pass valid for 1
+                    week days from purchase date.
+                  </li>
+                  <li>
+                    <strong>Bookings:</strong> Advance booking is required and
+                    is subject to class availability.
+                  </li>
+                  <li>
+                    <strong>Cancellation:</strong> Cancellations must be made at
+                    least 12 hours before class start time to retain credit.
+                  </li>
+                  <li>
+                    <strong>No-Show Policy:</strong> Failure to cancel within 12
+                    hours or no-show results in loss of class credit.
+                  </li>
+                  <li>
+                    <strong>Expiration:</strong> Unused classes expire after 1
+                    week with no refund or extension.
+                  </li>
+                  <li>
+                    <strong>Transferability:</strong> class passes are
+                    non-transferable and non-refundable.
+                  </li>
+                  <li>
+                    <strong>Studio Policy:</strong> The studio reserves the
+                    right to amend class schedules, instructors, or cancel
+                    classes when necessary.
+                  </li>
+                </ul>
               </div>
             </div>
-            <div class="policy-item">
-              <i class="fas fa-exchange-alt"></i>
-              <div>
-                <h4>Refunds &amp; Transfers</h4>
-                <p>
-                  All packages are non-refundable. Class packs are
-                  transferable; memberships are not.
-                </p>
+          </div>
+
+          <!-- 5 Class Pack -->
+          <div class="package-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="package-badge"></div>
+            <div class="package-icon">
+              <i class="fas fa-ticket-alt"></i>
+            </div>
+            <h3 class="package-title">5 Session Pack</h3>
+            <p class="package-description">
+              Great for consistent weekly practice
+            </p>
+            <div class="package-price">
+              <span class="currency">₦</span>
+              <span class="price">130,000</span>
+              <span class="period">/ 5 sessions</span>
+            </div>
+            <ul class="package-features">
+              <li><i class="fas fa-check-circle"></i> Valid for 1 month</li>
+            </ul>
+            <a
+              href="https://www.momoyoga.com/mmstudio/product/191194/buy/confirm-order/8223170"
+              class="btn-package"
+              >Buy Now</a
+            >
+
+            <!-- Terms & Conditions -->
+            <div class="terms-toggle">
+              <span class="terms-link" onclick="toggleTerms(this)"
+                >View Terms & Conditions <i class="fas fa-chevron-down"></i
+              ></span>
+              <div class="terms-content">
+                <h4>5 Class Pack Terms & Conditions</h4>
+                <ul>
+                  <li>
+                    <strong>Validity:</strong> 5-class pack valid for 1 month
+                    from purchase date.
+                  </li>
+                  <li>
+                    <strong>Bookings:</strong> Advance booking is required and
+                    is subject to class availability.
+                  </li>
+                  <li>
+                    <strong>Cancellation:</strong> 12-hour cancellation policy
+                    applies. Late cancellations count as class used.
+                  </li>
+                  <li>
+                    <strong>No-Show Policy:</strong> No-shows result in loss of
+                    class credit.
+                  </li>
+                  <li>
+                    <strong>Expiration:</strong> All unused classes expire after
+                    1 month with no refund or extension.
+                  </li>
+                  <li>
+                    <strong>Transferability:</strong> Pack can be shared with
+                    friends and family members.
+                  </li>
+                  <li>
+                    <strong>Refunds:</strong> Class packs are non-refundable but
+                    can be transferred to another person.
+                  </li>
+                  <li>
+                    <strong>Studio Policy:</strong> The studio reserves the
+                    right to amend class schedules, instructors, or cancel
+                    classes when necessary.
+                  </li>
+                </ul>
               </div>
             </div>
-            <div class="policy-item">
-              <i class="fas fa-hourglass-half"></i>
-              <div>
-                <h4>Expiration</h4>
-                <p>
-                  Drop-in: 30 days · 5-pack: 3 months · 10-pack: 6 months · No
-                  extensions except medical
-                </p>
-              </div>
+          </div>
+
+          <!-- 10 Class Pack - Featured -->
+          <div
+            class="package-card featured"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="package-badge">MOST POPULAR</div>
+            <div class="package-icon">
+              <i class="fas fa-star"></i>
             </div>
-            <div class="policy-item">
-              <i class="fas fa-user-check"></i>
-              <div>
-                <h4>Attendance</h4>
-                <p>
-                  Arrive 5-10 mins early · Late arrivals &gt;5 mins may not be
-                  admitted · No-shows forfeit class credit
-                </p>
-              </div>
+            <h3 class="package-title">10 Session Pack</h3>
+            <p class="package-description">
+              Best value for regular practitioners
+            </p>
+            <div class="package-price">
+              <span class="currency">₦</span>
+              <span class="price">260,000</span>
+              <span class="period">/ 10 sessions</span>
+              <!-- <span class="savings">Save ₦20,000</span> -->
             </div>
-            <div class="policy-item">
-              <i class="fas fa-child"></i>
-              <div>
-                <h4>Age Requirement</h4>
-                <p>
-                  Minimum 14 years · Ages 14-16 must be accompanied by a
-                  participating adult
-                </p>
-              </div>
-            </div>
-            <div class="policy-item">
-              <i class="fas fa-tshirt"></i>
-              <div>
-                <h4>Dress Code</h4>
-                <p>
-                  Fitted athletic wear · Grippy socks required for reformer
-                  classes
-                </p>
-              </div>
-            </div>
-            <div class="policy-item">
-              <i class="fas fa-notes-medical"></i>
-              <div>
-                <h4>Health &amp; Safety</h4>
-                <p>
-                  Complete health questionnaire before first class · Inform
-                  instructor of injuries or pregnancy
-                </p>
-              </div>
-            </div>
-            <div class="policy-item">
-              <i class="fas fa-file-signature"></i>
-              <div>
-                <h4>Liability Waiver</h4>
-                <p>
-                  All participants must sign a waiver before attending first
-                  class
-                </p>
+            <ul class="package-features">
+              <li><i class="fas fa-check-circle"></i> Valid for 1 month</li>
+            </ul>
+            <a
+              href="https://www.momoyoga.com/mmstudio/product/191194/buy/confirm-order/8223170"
+              class="btn-package featured-btn"
+              >Buy Now</a
+            >
+
+            <!-- Terms & Conditions -->
+            <div class="terms-toggle">
+              <span class="terms-link" onclick="toggleTerms(this)"
+                >View Terms & Conditions <i class="fas fa-chevron-down"></i
+              ></span>
+              <div class="terms-content">
+                <h4>10 Class Pack Terms & Conditions</h4>
+                <ul>
+                  <li>
+                    <strong>Validity:</strong> 10-session pack valid for 1 month
+                    from purchase date.
+                  </li>
+                  <li>
+                    <strong>Bookings:</strong> Advance booking is required and
+                    is subject to class availability.
+                  </li>
+                  <li>
+                    <strong>Cancellation:</strong> 12-hour cancellation policy
+                    applies. Late cancellations count as class used.
+                  </li>
+                  <li>
+                    <strong>No-Show Policy:</strong> No-shows result in loss of
+                    class credit.
+                  </li>
+                  <li>
+                    <strong>Expiration:</strong> All unused classes expire after
+                    1 month with no refund or extension.
+                  </li>
+                  <li>
+                    <strong>Refunds:</strong> Class packs are non-refundable but
+                    can be transferred.
+                  </li>
+                  <li>
+                    <strong>Studio Policy:</strong> The studio reserves the
+                    right to amend class schedules, instructors, or cancel
+                    classes when necessary.
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Quick Reference Note -->
-        <div class="terms-note">
-          <i class="fas fa-info-circle"></i>
+    <!-- Membership Section -->
+    <section class="private-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="eyebrow">MEMBERSHIP</span>
+          <h2 class="section-title">Membership Sessions</h2>
+          <p class="section-subtitle">Access to unlimited classes</p>
+        </div>
+
+        <div class="private-grid">
+          <div class="private-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="private-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <h3>Membership Session</h3>
+            <div class="private-price">
+              ₦299,000 <span>/ for all classes</span>
+            </div>
+            <ul class="private-features">
+              <li>
+                <i class="fas fa-check-circle"></i> Enjoy unlimited access to
+                all classes offered
+              </li>
+              <li><i class="fas fa-check-circle"></i> Valid for 1 month</li>
+              <!--<li><i class="fas fa-check-circle"></i> Flexible scheduling</li>
+              <li>
+                <i class="fas fa-check-circle"></i> Perfect for beginners or
+                rehabilitation
+              </li> -->
+            </ul>
+            <a href="#schedule" class="btn-private">Buy Now</a>
+
+            <!-- Terms & Conditions -->
+            <div class="terms-toggle private-terms">
+              <span class="terms-link" onclick="toggleTerms(this)"
+                >View Terms & Conditions <i class="fas fa-chevron-down"></i
+              ></span>
+              <div class="terms-content">
+                <h4>Membership Terms & Conditions</h4>
+                <ul>
+                  <li>
+                    <strong>Validity:</strong> Membership is valid for 1 month
+                    from the date of purchase.
+                  </li>
+                  <li>
+                    <strong>Bookings:</strong> Advance booking is required and
+                    is subject to class availability.
+                  </li>
+                  <li>
+                    <strong>Cancellation / No-Show polocy:</strong> A minimum of
+                    12 hours' notice is required to cancel a booking. Late
+                    cancellations may incur a penalty.
+                  </li>
+                  <li>
+                    <strong>Expiration:</strong> Membership expires at the end
+                    of the 1-month validity period and cannot be extended.
+                  </li>
+                  <li>
+                    <strong>Refund:</strong> Memberships are non-refundable and
+                    non-transferable.
+                  </li>
+                  <li>
+                    <strong>Studio Policy:</strong> The studio reserves the
+                    right to amend class schedules, instructors, or cancel
+                    classes when necessary.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="eyebrow">COMMON QUESTIONS</span>
+          <h2 class="section-title">Package FAQs</h2>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item" data-aos="fade-up">
+            <div class="faq-question">
+              <h4>Can I share my class pack with friends?</h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes! Our 5-class and 10-class packs are shareable with friends
+                and family. Drop-in passes are non-transferable. When booking,
+                simply specify who will be attending each class.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-question">
+              <h4>
+                What happens if I don't use all my classes before expiration?
+              </h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Unused classes expire after the validity period and cannot be
+                refunded. We recommend planning your classes regularly.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-question">
+              <h4>What is your cancellation policy?</h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We require 12 hours notice for cancellations. Late cancellations
+                or no-shows will result in the loss of that class credit from
+                your pack. Private sessions require 24-hour notice.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="faq-question">
+              <h4>Can I upgrade from a smaller pack to a larger one?</h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes! You can upgrade at any time by paying the difference in
+                price. The remaining classes from your current pack will be
+                added to your new pack with the extended validity period.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="faq-question">
+              <h4>Do you offer refunds on class packs?</h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Class packs are non-refundable but can be transferred to another
+                person. If you have a medical condition preventing
+                participation, we may offer extensions with a doctor's note.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Terms & Conditions Section -->
+    <section class="terms-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <!-- <span class="eyebrow">LEGAL</span> -->
+          <h2 class="section-title">Terms & Conditions</h2>
+          <p class="section-subtitle">
+            Please read our terms carefully before purchasing
+          </p>
+        </div>
+
+        <div class="terms-container" data-aos="fade-up">
+          <!-- General Policies -->
+          <div class="terms-summary">
+            <h3>General Policies</h3>
+            <div class="policies-grid">
+              <div class="policy-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                  <h4>Cancellation Policy</h4>
+                  <p>
+                    12-hour notice for group classes · 24-hour notice for
+                    private/duet sessions
+                  </p>
+                </div>
+              </div>
+              <div class="policy-item">
+                <i class="fas fa-exchange-alt"></i>
+                <div>
+                  <h4>Refunds &amp; Transfers</h4>
+                  <p>
+                    All packages are non-refundable. Class packs are
+                    transferable; memberships are not.
+                  </p>
+                </div>
+              </div>
+              <div class="policy-item">
+                <i class="fas fa-hourglass-half"></i>
+                <div>
+                  <h4>Expiration</h4>
+                  <p>Drop-in: 1 week · 5-pack: 1 month · 10-pack: 1 month</p>
+                </div>
+              </div>
+              <div class="policy-item">
+                <i class="fas fa-user-check"></i>
+                <div>
+                  <h4>Attendance</h4>
+                  <p>
+                    Arrive 5-10 mins early · Late arrivals &gt;10 mins may not
+                    be admitted · No-shows forfeit class credit
+                  </p>
+                </div>
+              </div>
+              <div class="policy-item">
+                <i class="fas fa-child"></i>
+                <div>
+                  <h4>Age Requirement</h4>
+                  <p>Minimum 14 years</p>
+                </div>
+              </div>
+              <div class="policy-item">
+                <i class="fas fa-tshirt"></i>
+                <div>
+                  <h4>Dress Code</h4>
+                  <p>
+                    Fitted athletic wear · Grippy socks required for reformer
+                    classes
+                  </p>
+                </div>
+              </div>
+              <div class="policy-item">
+                <i class="fas fa-notes-medical"></i>
+                <div>
+                  <h4>Health &amp; Safety</h4>
+                  <p>
+                    Complete health questionnaire before first class · Inform
+                    instructor of injuries or pregnancy
+                  </p>
+                </div>
+              </div>
+              <div class="policy-item">
+                <i class="fas fa-file-signature"></i>
+                <div>
+                  <h4>Liability Waiver</h4>
+                  <p>
+                    All participants must sign a waiver before attending first
+                    class
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Reference Note -->
+          <div class="terms-note">
+            <i class="fas fa-info-circle"></i>
+            <p>
+              For questions about these terms, contact us at
+              <strong>
+                <a
+                  href="mailto:info@mmpilatesstudio.com"
+                  style="color: #c0a27d; text-decoration: none"
+                  >info@mmpilatesstudio.com</a
+                >
+              </strong>
+              or call
+              <strong>
+                <a
+                  href="tel:+2348123456789"
+                  style="color: #c0a27d; text-decoration: none"
+                  >(+234) 707 012 1290</a
+                >
+              </strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content" data-aos="fade-up">
+          <h2>Ready to start your Pilates journey?</h2>
           <p>
-            For questions about these terms, contact us at
-            <strong>
-              <a href="mailto:hello@mmpilates.com" style="color: #c0a27d; text-decoration: none">hello@mmpilates.com</a>
-            </strong>
-            or call
-            <strong>
-              <a href="tel:+2348123456789" style="color: #c0a27d; text-decoration: none">(02) 8123 4567</a>
-            </strong>
+            Book your first class and experience movement that feels
+            intentional, calming, and strong.
           </p>
+          <div class="cta-buttons">
+            <a href="schedule.html" class="btn-cta-primary">Book Now</a>
+            <a href="pricing.html" class="btn-cta-secondary"
+              >Explore Membership</a
+            >
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content" data-aos="fade-up">
-        <h2>Ready to start your Pilates journey?</h2>
-        <p>
-          Book your first class and experience movement that feels
-          intentional, calming, and strong.
-        </p>
-        <div class="cta-buttons">
-          <a href="#schedule" class="btn-cta-primary">Book Now</a>
-          <a href="membership.html" class="btn-cta-secondary">Explore Membership</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <img
+              src="assets/images/mm-logo.png"
+              alt="MM Pilates Logo"
+              class="footer-logo mb-3"
+            />
+            <p class="copy-muted">
+              Mindful Motion for everybody where movements meets intention.
+            </p>
+            <div class="social-list mt-4">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <img src="assets/images/mm-logo.png" alt="MM Pilates Logo" class="footer-logo mb-3" />
-          <p class="copy-muted">
-            Real Pilates for Real People. A calm, intentional studio designed
-            to help you move better and feel better.
-          </p>
-          <div class="social-list mt-4">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
+          <div class="col-md-4 col-lg-2">
+            <p class="footer-title">Pages</p>
+            <ul class="list-unstyled d-grid gap-2">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about">About</a></li>
+              <li><a href="index.html#classes">Classes</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="schedule.html">Schedule</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 col-lg-3">
+            <p class="footer-title">Studio</p>
+            <ul class="list-unstyled d-grid gap-2">
+              <li>Reformer Pilates</li>
+              <li>Mat Pilates</li>
+              <li>Stretch &amp; Release</li>
+              <li>Private Sessions</li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 col-lg-3">
+            <p class="footer-title">Contact</p>
+            <ul class="list-unstyled d-grid gap-2">
+              <li><i class="fas fa-envelope me-2"></i> hello@mmpilates.com</li>
+              <li><i class="fas fa-phone me-2"></i> (02) 8123 4567</li>
+              <li>
+                <i class="fas fa-location-dot me-2"></i> Lekki, Lagos, Nigeria
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div class="col-md-4 col-lg-2">
-          <p class="footer-title">Pages</p>
-          <ul class="list-unstyled d-grid gap-2">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#classes">Classes</a></li>
-            <li><a href="packages.html">Packages</a></li>
-            <li><a href="membership.html">Membership</a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-4 col-lg-3">
-          <p class="footer-title">Studio</p>
-          <ul class="list-unstyled d-grid gap-2">
-            <li>Reformer Pilates</li>
-            <li>Mat Pilates</li>
-            <li>Stretch &amp; Release</li>
-            <li>Private Sessions</li>
-          </ul>
-        </div>
-
-        <div class="col-md-4 col-lg-3">
-          <p class="footer-title">Contact</p>
-          <ul class="list-unstyled d-grid gap-2">
-            <li><i class="fas fa-envelope me-2"></i> hello@mmpilates.com</li>
-            <li><i class="fas fa-phone me-2"></i> (02) 8123 4567</li>
-            <li>
-              <i class="fas fa-location-dot me-2"></i> Lekki, Lagos, Nigeria
-            </li>
-          </ul>
+        <div class="copyright">
+          &copy; <span id="currentYear"></span> MM Pilates Studio. All rights
+          reserved.
         </div>
       </div>
+    </footer>
 
-      <div class="copyright">
-        &copy; <span id="currentYear"></span> MM Pilates Studio. All rights
-        reserved.
-      </div>
-    </div>
-  </footer>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
-  <!-- Back to Top Button -->
-  <button class="back-to-top" id="backToTop">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+      });
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-  </script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
-  </script>
-  <script>
-    // Initialize AOS
-    AOS.init({
-      duration: 800,
-      once: true,
-      offset: 100,
-    });
+      // Current Year
+      document.getElementById('currentYear').textContent =
+        new Date().getFullYear();
 
-    // Current Year
-    document.getElementById("currentYear").textContent =
-      new Date().getFullYear();
-
-    // Navbar scroll effect
-    const navbar = document.querySelector(".navbar");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
-    });
-
-    // Back to top
-    const backToTop = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        backToTop.classList.add("show");
-      } else {
-        backToTop.classList.remove("show");
-      }
-    });
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    // Toggle Terms & Conditions
-    function toggleTerms(element) {
-      const termsContainer = element.closest(".terms-toggle");
-      termsContainer.classList.toggle("open");
-    }
-    window.toggleTerms = toggleTerms;
-
-    // FAQ Accordion
-    const faqItems = document.querySelectorAll(".faq-item");
-    faqItems.forEach((item) => {
-      const question = item.querySelector(".faq-question");
-      question.addEventListener("click", () => {
-        const isOpen = item.classList.contains("open");
-        faqItems.forEach((i) => i.classList.remove("open"));
-        if (!isOpen) {
-          item.classList.add("open");
+      // Navbar scroll effect
+      const navbar = document.querySelector('.navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
         }
       });
-    });
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function(e) {
-        const href = this.getAttribute("href");
-        if (href === "#") return;
-        const target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Back to top
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('show');
+        } else {
+          backToTop.classList.remove('show');
         }
       });
-    });
-  </script>
-</body>
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Toggle Terms & Conditions
+      function toggleTerms(element) {
+        const termsContainer = element.closest('.terms-toggle');
+        termsContainer.classList.toggle('open');
+      }
+      window.toggleTerms = toggleTerms;
+
+      // FAQ Accordion
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach((item) => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+          const isOpen = item.classList.contains('open');
+          faqItems.forEach((i) => i.classList.remove('open'));
+          if (!isOpen) {
+            item.classList.add('open');
+          }
+        });
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

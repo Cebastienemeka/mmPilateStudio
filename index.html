@@ -1,779 +1,912 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>MM Pilates Studio | Find Your Flow</title>
+    <meta
+      content="MM Pilates Studio - Real Pilates for Real People. Join our inclusive, welcoming community and discover the transformative power of Pilates."
+      name="description"
+    />
+    <link href="assets/images/logo.png" rel="icon" type="image/png" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Cormorant+Garamond:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/style2.css" rel="stylesheet" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>MM Pilates Studio | Find Your Flow</title>
-  <meta
-    content="MM Pilates Studio - Real Pilates for Real People. Join our inclusive, welcoming community and discover the transformative power of Pilates."
-    name="description" />
-  <link href="assets/images/logo.png" rel="icon" type="image/png" />
-  <link href="https://fonts.googleapis.com" rel="preconnect" />
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Cormorant+Garamond:wght@400;500;600;700&amp;display=swap"
-    rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <link href="css/style2.css" rel="stylesheet" />
+    <!-- Momo Yoga Schedule Integration CSS -->
+    <link
+      rel="stylesheet"
+      crossorigin="anonymous"
+      href="https://cdn.momo.yoga/plugins/schedule-integration/schedule.css"
+    />
 
-  <!-- Momo Yoga Schedule Integration CSS -->
-  <link rel="stylesheet" crossorigin="anonymous" href="https://cdn.momo.yoga/plugins/schedule-integration/schedule.css">
-
-  <style>
-    /* =========================================================
+    <style>
+      /* =========================================================
    MM PILATES STUDIO GALLERY CAROUSEL
 ========================================================= */
 
-    .mm-gallery-section {
-      overflow: hidden;
-    }
-
-    .mm-gallery-section .section-intro {
-      max-width: 760px;
-      margin-inline: auto;
-    }
-
-    .mm-gallery-carousel {
-      position: relative;
-      max-width: 1180px;
-      margin-inline: auto;
-    }
-
-    .mm-gallery-viewport {
-      overflow: hidden;
-      border-radius: 1.5rem;
-      outline: none;
-    }
-
-    .mm-gallery-viewport:focus-visible {
-      box-shadow: 0 0 0 4px rgba(178, 133, 105, 0.22);
-    }
-
-    .mm-gallery-track {
-      display: flex;
-      gap: 1.25rem;
-      padding: 0.25rem;
-      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: transform;
-    }
-
-    .mm-gallery-slide {
-      position: relative;
-      flex: 0 0 calc((100% - 2.5rem) / 3);
-      aspect-ratio: 4 / 5;
-      margin: 0;
-      overflow: hidden;
-      border-radius: 1.35rem;
-      background: #e8e1da;
-      box-shadow: 0 16px 40px rgba(36, 27, 22, 0.10);
-    }
-
-    .mm-gallery-slide::after {
-      content: "";
-      position: absolute;
-      inset: 38% 0 0;
-      background: linear-gradient(180deg, transparent, rgba(24, 18, 15, 0.72));
-      pointer-events: none;
-    }
-
-    .mm-gallery-slide img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      transition: transform 0.7s ease;
-    }
-
-    .mm-gallery-slide:hover img {
-      transform: scale(1.06);
-    }
-
-    .mm-gallery-slide figcaption {
-      position: absolute;
-      right: 1.15rem;
-      bottom: 1.05rem;
-      left: 1.15rem;
-      z-index: 2;
-      color: #fff;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.55rem;
-      font-weight: 600;
-      line-height: 1.05;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
-    }
-
-    .mm-gallery-arrow {
-      position: absolute;
-      top: 50%;
-      z-index: 5;
-      width: 3rem;
-      height: 3rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 0;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.94);
-      color: #30251f;
-      box-shadow: 0 10px 30px rgba(31, 24, 20, 0.18);
-      transform: translateY(-50%);
-      transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
-    }
-
-    .mm-gallery-arrow:hover,
-    .mm-gallery-arrow:focus-visible {
-      background: #30251f;
-      color: #fff;
-      transform: translateY(-50%) scale(1.08);
-    }
-
-    .mm-gallery-prev {
-      left: -1.1rem;
-    }
-
-    .mm-gallery-next {
-      right: -1.1rem;
-    }
-
-    .mm-gallery-controls {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .mm-gallery-dots {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .mm-gallery-dot {
-      width: 0.55rem;
-      height: 0.55rem;
-      padding: 0;
-      border: 0;
-      border-radius: 999px;
-      background: rgba(48, 37, 31, 0.24);
-      transition: width 0.3s ease, background 0.3s ease;
-    }
-
-    .mm-gallery-dot.is-active {
-      width: 1.8rem;
-      background: #30251f;
-    }
-
-    .mm-gallery-counter {
-      min-width: 3.5rem;
-      color: rgba(48, 37, 31, 0.7);
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-    }
-
-    /* =========================================================
-   MOMO YOGA SCHEDULE - DARK THEME WITH PAGINATION
-========================================================= */
-    .momo-schedule-wrapper {
-      background: #141518;
-      border-radius: 28px;
-      padding: 30px;
-      border: 1px solid rgba(192, 162, 125, 0.15);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    }
-
-    .momo-schedule-wrapper .momo-schedule * {
-      color: #ffffff !important;
-    }
-
-    .momo-schedule-wrapper .momo-class-card {
-      background: rgba(255, 255, 255, 0.04) !important;
-      border: 1px solid rgba(192, 162, 125, 0.12) !important;
-      border-radius: 16px !important;
-      padding: 16px !important;
-      margin-bottom: 12px !important;
-      transition: all 0.3s ease !important;
-    }
-
-    .momo-schedule-wrapper .momo-class-card:hover {
-      background: rgba(192, 162, 125, 0.08) !important;
-      border-color: #c0a27d !important;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(192, 162, 125, 0.1);
-    }
-
-    .momo-schedule-wrapper .momo-class-title {
-      color: #c0a27d !important;
-      font-weight: 700 !important;
-      font-size: 1.05rem !important;
-    }
-
-    .momo-schedule-wrapper .momo-class-time {
-      color: #ffffff !important;
-      font-weight: 600 !important;
-    }
-
-    .momo-schedule-wrapper .momo-class-teacher {
-      color: rgba(255, 255, 255, 0.6) !important;
-    }
-
-    .momo-schedule-wrapper .momo-day-header {
-      color: #c0a27d !important;
-      font-weight: 700 !important;
-      border-bottom: 2px solid rgba(192, 162, 125, 0.3) !important;
-      padding-bottom: 0.6rem !important;
-      margin-bottom: 1rem !important;
-      font-size: 1.1rem !important;
-    }
-
-    .momo-schedule-wrapper .momo-book-btn {
-      background: #c0a27d !important;
-      color: #141518 !important;
-      border: none !important;
-      border-radius: 30px !important;
-      padding: 0.5rem 1.8rem !important;
-      font-weight: 700 !important;
-      font-size: 0.8rem !important;
-      transition: all 0.3s ease !important;
-      text-transform: uppercase !important;
-      letter-spacing: 0.5px !important;
-    }
-
-    .momo-schedule-wrapper .momo-book-btn:hover {
-      background: #d4b89b !important;
-      transform: scale(1.03);
-    }
-
-    .momo-schedule-wrapper .momo-no-classes {
-      color: rgba(255, 255, 255, 0.4) !important;
-      text-align: center !important;
-      padding: 2rem 0 !important;
-    }
-
-    /* =========================================================
-   PAGINATION - DARK THEME
-========================================================= */
-    .momo-pagination {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      margin-top: 20px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(192, 162, 125, 0.15);
-    }
-
-    .momo-pagination-hidden {
-      display: none !important;
-    }
-
-    .momo-pagination button {
-      background: transparent;
-      border: 1.5px solid rgba(192, 162, 125, 0.25);
-      color: #ffffff;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .momo-pagination button:hover {
-      border-color: #c0a27d;
-      background: rgba(192, 162, 125, 0.1);
-      color: #c0a27d;
-    }
-
-    .momo-pagination button.active {
-      background: #c0a27d;
-      border-color: #c0a27d;
-      color: #141518;
-    }
-
-    .momo-pagination button.active:hover {
-      background: #d4b89b;
-      border-color: #d4b89b;
-      color: #141518;
-    }
-
-    .momo-pagination button:disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
-    }
-
-    .momo-pagination button:disabled:hover {
-      background: transparent;
-      border-color: rgba(192, 162, 125, 0.25);
-      color: #ffffff;
-    }
-
-    .momo-pagination .page-dots {
-      color: rgba(255, 255, 255, 0.4);
-      padding: 0 4px;
-    }
-
-    .momo-page-numbers {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .momo-pagination-status {
-      margin: 12px 0 0;
-      text-align: center;
-      color: rgba(255, 255, 255, 0.4) !important;
-      font-size: 0.85rem;
-    }
-
-    .momo-pagination-status:empty {
-      display: none;
-    }
-
-    .schedule-view-all-btn {
-      display: inline-block;
-      padding: 0.7rem 2.2rem;
-      border-radius: 30px;
-      background: #c0a27d;
-      color: #141518;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-      text-align: center;
-    }
-
-    .schedule-view-all-btn:hover {
-      background: #d4b89b;
-      color: #141518;
-      transform: translateY(-2px);
-    }
-
-    @media (max-width: 991px) {
-      .mm-gallery-slide {
-        flex-basis: calc((100% - 1.25rem) / 2);
-        aspect-ratio: 4 / 4.7;
+      .mm-gallery-section {
+        overflow: hidden;
       }
 
-      .mm-gallery-prev {
-        left: 0.65rem;
+      .mm-gallery-section .section-intro {
+        max-width: 760px;
+        margin-inline: auto;
       }
 
-      .mm-gallery-next {
-        right: 0.65rem;
+      .mm-gallery-carousel {
+        position: relative;
+        max-width: 1180px;
+        margin-inline: auto;
       }
 
-      .momo-schedule-wrapper {
-        padding: 20px;
+      .mm-gallery-viewport {
+        overflow: hidden;
+        border-radius: 1.5rem;
+        outline: none;
       }
-    }
 
-    @media (max-width: 575px) {
+      .mm-gallery-viewport:focus-visible {
+        box-shadow: 0 0 0 4px rgba(178, 133, 105, 0.22);
+      }
+
       .mm-gallery-track {
-        gap: 0.9rem;
+        display: flex;
+        gap: 1.25rem;
+        padding: 0.25rem;
+        transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: transform;
       }
 
       .mm-gallery-slide {
-        flex-basis: 88%;
-        aspect-ratio: 4 / 4.8;
+        position: relative;
+        flex: 0 0 calc((100% - 2.5rem) / 3);
+        aspect-ratio: 4 / 5;
+        margin: 0;
+        overflow: hidden;
+        border-radius: 1.35rem;
+        background: #e8e1da;
+        box-shadow: 0 16px 40px rgba(36, 27, 22, 0.1);
+      }
+
+      .mm-gallery-slide::after {
+        content: '';
+        position: absolute;
+        inset: 38% 0 0;
+        background: linear-gradient(
+          180deg,
+          transparent,
+          rgba(24, 18, 15, 0.72)
+        );
+        pointer-events: none;
+      }
+
+      .mm-gallery-slide img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.7s ease;
+      }
+
+      .mm-gallery-slide:hover img {
+        transform: scale(1.06);
       }
 
       .mm-gallery-slide figcaption {
-        font-size: 1.35rem;
+        position: absolute;
+        right: 1.15rem;
+        bottom: 1.05rem;
+        left: 1.15rem;
+        z-index: 2;
+        color: #fff;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.55rem;
+        font-weight: 600;
+        line-height: 1.05;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
       }
 
       .mm-gallery-arrow {
-        width: 2.65rem;
-        height: 2.65rem;
+        position: absolute;
+        top: 50%;
+        z-index: 5;
+        width: 3rem;
+        height: 3rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.94);
+        color: #30251f;
+        box-shadow: 0 10px 30px rgba(31, 24, 20, 0.18);
+        transform: translateY(-50%);
+        transition:
+          transform 0.25s ease,
+          background 0.25s ease,
+          color 0.25s ease;
+      }
+
+      .mm-gallery-arrow:hover,
+      .mm-gallery-arrow:focus-visible {
+        background: #30251f;
+        color: #fff;
+        transform: translateY(-50%) scale(1.08);
+      }
+
+      .mm-gallery-prev {
+        left: -1.1rem;
+      }
+
+      .mm-gallery-next {
+        right: -1.1rem;
       }
 
       .mm-gallery-controls {
-        margin-top: 1.15rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
       }
 
+      .mm-gallery-dots {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .mm-gallery-dot {
+        width: 0.55rem;
+        height: 0.55rem;
+        padding: 0;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(48, 37, 31, 0.24);
+        transition:
+          width 0.3s ease,
+          background 0.3s ease;
+      }
+
+      .mm-gallery-dot.is-active {
+        width: 1.8rem;
+        background: #30251f;
+      }
+
+      .mm-gallery-counter {
+        min-width: 3.5rem;
+        color: rgba(48, 37, 31, 0.7);
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+      }
+
+      /* =========================================================
+   MOMO YOGA SCHEDULE - DARK THEME WITH PAGINATION
+========================================================= */
       .momo-schedule-wrapper {
-        padding: 12px;
-        border-radius: 20px;
+        background: #141518;
+        border-radius: 28px;
+        padding: 30px;
+        border: 1px solid rgba(192, 162, 125, 0.15);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      .momo-schedule-wrapper .momo-schedule * {
+        color: #ffffff !important;
+      }
+
+      .momo-schedule-wrapper .momo-class-card {
+        background: rgba(255, 255, 255, 0.04) !important;
+        border: 1px solid rgba(192, 162, 125, 0.12) !important;
+        border-radius: 16px !important;
+        padding: 16px !important;
+        margin-bottom: 12px !important;
+        transition: all 0.3s ease !important;
+      }
+
+      .momo-schedule-wrapper .momo-class-card:hover {
+        background: rgba(192, 162, 125, 0.08) !important;
+        border-color: #c0a27d !important;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(192, 162, 125, 0.1);
+      }
+
+      .momo-schedule-wrapper .momo-class-title {
+        color: #c0a27d !important;
+        font-weight: 700 !important;
+        font-size: 1.05rem !important;
+      }
+
+      .momo-schedule-wrapper .momo-class-time {
+        color: #ffffff !important;
+        font-weight: 600 !important;
+      }
+
+      .momo-schedule-wrapper .momo-class-teacher {
+        color: rgba(255, 255, 255, 0.6) !important;
+      }
+
+      .momo-schedule-wrapper .momo-day-header {
+        color: #c0a27d !important;
+        font-weight: 700 !important;
+        border-bottom: 2px solid rgba(192, 162, 125, 0.3) !important;
+        padding-bottom: 0.6rem !important;
+        margin-bottom: 1rem !important;
+        font-size: 1.1rem !important;
+      }
+
+      .momo-schedule-wrapper .momo-book-btn {
+        background: #c0a27d !important;
+        color: #141518 !important;
+        border: none !important;
+        border-radius: 30px !important;
+        padding: 0.5rem 1.8rem !important;
+        font-weight: 700 !important;
+        font-size: 0.8rem !important;
+        transition: all 0.3s ease !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+      }
+
+      .momo-schedule-wrapper .momo-book-btn:hover {
+        background: #d4b89b !important;
+        transform: scale(1.03);
+      }
+
+      .momo-schedule-wrapper .momo-no-classes {
+        color: rgba(255, 255, 255, 0.4) !important;
+        text-align: center !important;
+        padding: 2rem 0 !important;
+      }
+
+      /* =========================================================
+   PAGINATION - DARK THEME
+========================================================= */
+      .momo-pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(192, 162, 125, 0.15);
+      }
+
+      .momo-pagination-hidden {
+        display: none !important;
       }
 
       .momo-pagination button {
-        width: 36px;
-        height: 36px;
-        font-size: 0.8rem;
+        background: transparent;
+        border: 1.5px solid rgba(192, 162, 125, 0.25);
+        color: #ffffff;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-    }
 
-    @media (prefers-reduced-motion: reduce) {
-
-      .mm-gallery-track,
-      .mm-gallery-slide img,
-      .mm-gallery-arrow,
-      .mm-gallery-dot {
-        transition: none !important;
+      .momo-pagination button:hover {
+        border-color: #c0a27d;
+        background: rgba(192, 162, 125, 0.1);
+        color: #c0a27d;
       }
-    }
 
-    /* Gallery improvements */
-    .mm-gallery-slide {
-      flex-basis: calc((100% - 3.75rem) / 4);
-      aspect-ratio: 1 / 1.05;
-      max-height: 280px;
-      cursor: pointer;
-    }
+      .momo-pagination button.active {
+        background: #c0a27d;
+        border-color: #c0a27d;
+        color: #141518;
+      }
 
-    .mm-gallery-slide img {
-      height: 100%;
-      object-fit: cover;
-    }
+      .momo-pagination button.active:hover {
+        background: #d4b89b;
+        border-color: #d4b89b;
+        color: #141518;
+      }
 
-    .mm-gallery-viewport {
-      cursor: grab;
-    }
+      .momo-pagination button:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
 
-    .mm-image-lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, .85);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      padding: 30px;
-    }
+      .momo-pagination button:disabled:hover {
+        background: transparent;
+        border-color: rgba(192, 162, 125, 0.25);
+        color: #ffffff;
+      }
 
-    .mm-image-lightbox.active {
-      display: flex;
-    }
+      .momo-pagination .page-dots {
+        color: rgba(255, 255, 255, 0.4);
+        padding: 0 4px;
+      }
 
-    .mm-image-lightbox img {
-      max-width: 90vw;
-      max-height: 85vh;
-      border-radius: 15px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
-    }
+      .momo-page-numbers {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
 
-    .mm-image-lightbox-close {
-      position: absolute;
-      top: 25px;
-      right: 35px;
-      color: white;
-      font-size: 40px;
-      cursor: pointer;
-    }
+      .momo-pagination-status {
+        margin: 12px 0 0;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.4) !important;
+        font-size: 0.85rem;
+      }
 
-    .mm-image-lightbox-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, .9);
-      border: 0;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      font-size: 28px;
-      cursor: pointer;
-      z-index: 2;
-    }
+      .momo-pagination-status:empty {
+        display: none;
+      }
 
-    .mm-image-lightbox-prev {
-      left: 30px;
-    }
+      .schedule-view-all-btn {
+        display: inline-block;
+        padding: 0.7rem 2.2rem;
+        border-radius: 30px;
+        background: #c0a27d;
+        color: #141518;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+      }
 
-    .mm-image-lightbox-next {
-      right: 30px;
-    }
+      .schedule-view-all-btn:hover {
+        background: #d4b89b;
+        color: #141518;
+        transform: translateY(-2px);
+      }
 
-    .mm-image-lightbox-nav:hover {
-      background: #30251f;
-      color: white;
-    }
+      @media (max-width: 991px) {
+        .mm-gallery-slide {
+          flex-basis: calc((100% - 1.25rem) / 2);
+          aspect-ratio: 4 / 4.7;
+        }
 
-    @media(max-width:900px) {
+        .mm-gallery-prev {
+          left: 0.65rem;
+        }
+
+        .mm-gallery-next {
+          right: 0.65rem;
+        }
+
+        .momo-schedule-wrapper {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .mm-gallery-track {
+          gap: 0.9rem;
+        }
+
+        .mm-gallery-slide {
+          flex-basis: 88%;
+          aspect-ratio: 4 / 4.8;
+        }
+
+        .mm-gallery-slide figcaption {
+          font-size: 1.35rem;
+        }
+
+        .mm-gallery-arrow {
+          width: 2.65rem;
+          height: 2.65rem;
+        }
+
+        .mm-gallery-controls {
+          margin-top: 1.15rem;
+        }
+
+        .momo-schedule-wrapper {
+          padding: 12px;
+          border-radius: 20px;
+        }
+
+        .momo-pagination button {
+          width: 36px;
+          height: 36px;
+          font-size: 0.8rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .mm-gallery-track,
+        .mm-gallery-slide img,
+        .mm-gallery-arrow,
+        .mm-gallery-dot {
+          transition: none !important;
+        }
+      }
+
+      /* Gallery improvements */
       .mm-gallery-slide {
-        flex-basis: calc((100% - 1.25rem)/2);
-        max-height: 230px;
+        flex-basis: calc((100% - 3.75rem) / 4);
+        aspect-ratio: 1 / 1.05;
+        max-height: 280px;
+        cursor: pointer;
       }
-    }
 
-    @media(max-width:600px) {
-      .mm-gallery-slide {
-        flex-basis: 88%;
-        max-height: 260px;
+      .mm-gallery-slide img {
+        height: 100%;
+        object-fit: cover;
       }
-    }
-  </style>
-</head>
 
-<body>
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img alt="MM Pilates Logo" class="nav-logo" src="assets/images/mm-logo.png" />
-      </a>
-      <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
-        data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="classes.html">Classes</a></li>
-          <li class="nav-item">
-            <a class="nav-link" href="pricing.html">Pricing</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-            <a class="btn-muse" href="schedule.html">Book a Class</a>
-          </li>
-        </ul>
+      .mm-gallery-viewport {
+        cursor: grab;
+      }
+
+      .mm-image-lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+      }
+
+      .mm-image-lightbox.active {
+        display: flex;
+      }
+
+      .mm-image-lightbox img {
+        max-width: 90vw;
+        max-height: 85vh;
+        border-radius: 15px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      }
+
+      .mm-image-lightbox-close {
+        position: absolute;
+        top: 25px;
+        right: 35px;
+        color: white;
+        font-size: 40px;
+        cursor: pointer;
+      }
+
+      .mm-image-lightbox-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.9);
+        border: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 28px;
+        cursor: pointer;
+        z-index: 2;
+      }
+
+      .mm-image-lightbox-prev {
+        left: 30px;
+      }
+
+      .mm-image-lightbox-next {
+        right: 30px;
+      }
+
+      .mm-image-lightbox-nav:hover {
+        background: #30251f;
+        color: white;
+      }
+
+      @media (max-width: 900px) {
+        .mm-gallery-slide {
+          flex-basis: calc((100% - 1.25rem) / 2);
+          max-height: 230px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .mm-gallery-slide {
+          flex-basis: 88%;
+          max-height: 260px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            alt="MM Pilates Logo"
+            class="nav-logo"
+            src="assets/images/mm-logo.png"
+          />
+        </a>
+        <button
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          class="navbar-toggler"
+          data-bs-target="#navbarNav"
+          data-bs-toggle="collapse"
+          type="button"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="classes.html">Classes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pricing.html">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+              <a class="btn-muse" href="schedule.html">Book a Class</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- HERO -->
-  <section class="hero hero-video-bg" id="home">
-    <video autoplay="" class="hero-bg-video" loop="" muted="" playsinline="">
-      <source src="assets/videos/heross-banner.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="container hero-content" style="padding-top: 180px;">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <div class="hero-copy" data-reveal="">
-            <span class="eyebrow">REAL PILATES FOR REAL PEOPLE</span>
-            <h1>Find Your Flow.<br />Find Your Strength.</h1>
-            <p class="lead-text mx-auto" style="max-width: 700px;">
-              An oasis in the middle of your day. A space to escape from judgement,
-              expectation and stress to find clarity, calm and connection — to self
-              and your community.
-            </p>
-            <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
-              <a class="btn-muse" href="schedule.html">Start Your Journey</a>
-              <a class="btn-muse-outline" href="classes.html">View all classes</a>
+    <!-- HERO -->
+    <section class="hero hero-video-bg" id="home">
+      <video autoplay="" class="hero-bg-video" loop="" muted="" playsinline="">
+        <source src="assets/videos/heross-banner.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content" style="padding-top: 180px">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <div class="hero-copy" data-reveal="">
+              <span class="eyebrow">REAL PILATES FOR REAL PEOPLE</span>
+              <h1>Find Your Flow.<br />Find Your Strength.</h1>
+              <p class="lead-text mx-auto" style="max-width: 700px">
+                Mindful Motion for everybody where movements meets intention.
+              </p>
+              <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
+                <a class="btn-muse" href="schedule.html">Start Your Journey</a>
+                <a class="btn-muse-outline" href="classes.html"
+                  >View all classes</a
+                >
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CLASSES -->
-  <section class="section-pad" id="classes">
-    <div class="container">
-      <div class="text-center mb-5">
-        <span class="eyebrow">OUR CLASSES</span>
-        <h2 class="section-title">Choose the class that meets you where you are.</h2>
-        <p class="copy-muted section-intro">
-          A refined Pilates studio where intentional movement flows, built to strengthen your core and calm your mind.
-        </p>
+    <!-- CLASSES -->
+    <section class="section-pad" id="classes">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="eyebrow">OUR CLASSES</span>
+          <h2 class="section-title">
+            Choose the class that meets you where you are.
+          </h2>
+          <p class="copy-muted section-intro">
+            A refined Pilates studio where intentional movement flows, built to
+            strengthen your core and calm your mind.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3" data-reveal="">
+            <article class="studio-card">
+              <img
+                alt="Reformer Pilates"
+                class="card-media"
+                src="./assets/images/reformer-pilates.jpg"
+              />
+              <div class="content">
+                <span class="tag">All Levels</span>
+                <h3 class="card-title mt-3">Reformer Pilates</h3>
+                <p class="copy-muted">
+                  Build strength, control, and alignment through guided
+                  full-body movement on the reformer. Our instructors offer
+                  modifications and challenges to suit every body.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3" data-reveal="">
+            <article class="studio-card">
+              <img
+                alt="Mat Pilates"
+                class="card-media"
+                src="assets/images/mat-pilates.jpg"
+              />
+              <div class="content">
+                <span class="tag">Core Focus</span>
+                <h3 class="card-title mt-3">Mat Pilates</h3>
+                <p class="copy-muted">
+                  Low impact workout performed on a mat using your body weight
+                  to build core strength, stability, and control. It focuses on
+                  precise movements and breathwork to improve posture,
+                  flexibility, and overall body alignment. Each session leaves
+                  you feeling stronger, more centered, and refreshed.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3" data-reveal="">
+            <article class="studio-card">
+              <img
+                alt="Stretch and mobility"
+                class="card-media"
+                src="assets/images/stretch&release.jpg"
+              />
+              <div class="content">
+                <span class="tag">Mobility</span>
+                <h3 class="card-title mt-3">Stretch &amp; Restore</h3>
+                <p class="copy-muted">
+                  A Gentle, recovery focused class designed to release tension,
+                  improve flexibility, and support muscle recovery. Through
+                  slow, guided stretches and mindful breathing, it helps reduce
+                  stiffness and enhance overall mobility. It leaves you feeling
+                  relaxed, rebalanced, and deeply refreshed.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3" data-reveal="">
+            <article class="studio-card">
+              <img
+                alt="Private sessions"
+                class="card-media"
+                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800"
+              />
+              <div class="content">
+                <span class="tag">Personal</span>
+                <h3 class="card-title mt-3">Private Sessions</h3>
+                <p class="copy-muted">
+                  One-on-one support tailored to your goals, pace, and movement
+                  needs.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <!-- Button Section -->
+        <div class="text-center mt-5 pt-3" data-reveal="">
+          <a
+            class="btn-muse"
+            href="pricing.html"
+            style="padding: 0.9rem 2.2rem"
+          >
+            Explore Pricing Options <i class="fas fa-arrow-right ms-2"></i>
+          </a>
+          <p class="copy-muted mt-3 mb-0" style="font-size: 0.85rem">
+            Flexible packages · Drop-ins · Memberships available
+          </p>
+        </div>
       </div>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3" data-reveal="">
-          <article class="studio-card">
-            <img alt="Reformer Pilates" class="card-media"
-              src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800" />
-            <div class="content">
-              <span class="tag">All Levels</span>
-              <h3 class="card-title mt-3">Reformer Pilates</h3>
-              <p class="copy-muted">
-                Build strength, control, and alignment through guided full-body movement.
-              </p>
-            </div>
-          </article>
-        </div>
-        <div class="col-md-6 col-lg-3" data-reveal="">
-          <article class="studio-card">
-            <img alt="Mat Pilates" class="card-media"
-              src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=800&amp;auto=format&amp;fit=crop&amp;q=80" />
-            <div class="content">
-              <span class="tag">Core Focus</span>
-              <h3 class="card-title mt-3">Mat Pilates</h3>
-              <p class="copy-muted">
-                Improve posture, balance, and core stability with classic mat sequences.
-              </p>
-            </div>
-          </article>
-        </div>
-        <div class="col-md-6 col-lg-3" data-reveal="">
-          <article class="studio-card">
-            <img alt="Stretch and mobility" class="card-media"
-              src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800" />
-            <div class="content">
-              <span class="tag">Mobility</span>
-              <h3 class="card-title mt-3">Stretch &amp; Release</h3>
-              <p class="copy-muted">
-                Lengthen tight muscles and create more ease in the way your body moves.
-              </p>
-            </div>
-          </article>
-        </div>
-        <div class="col-md-6 col-lg-3" data-reveal="">
-          <article class="studio-card">
-            <img alt="Private sessions" class="card-media"
-              src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800" />
-            <div class="content">
-              <span class="tag">Personal</span>
-              <h3 class="card-title mt-3">Private Sessions</h3>
-              <p class="copy-muted">
-                One-on-one support tailored to your goals, pace, and movement needs.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-      <!-- Button Section -->
-      <div class="text-center mt-5 pt-3" data-reveal="">
-        <a class="btn-muse" href="classes.html" style="padding: 0.9rem 2.2rem;">
-          Explore Pricing Options <i class="fas fa-arrow-right ms-2"></i>
-        </a>
-        <p class="copy-muted mt-3 mb-0" style="font-size: 0.85rem;">
-          Flexible packages · Drop-ins · Memberships available
-        </p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- TIMETABLE - MOMO YOGA SCHEDULE WITH PAGINATION -->
-  <section class="booking-section section-pad" id="schedule">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="booking-card" data-reveal="">
-            <div class="booking-card-header">
-              <h3>This Week's Classes</h3>
-              <span class="booking-live">LIVE SCHEDULE</span>
-            </div>
-
-            <!-- Momo Yoga Schedule Integration -->
-            <div class="momo-schedule-wrapper">
-              <div data-momo-schedule="https://www.momoyoga.com/lostudio/"
-                   data-momo-view-type="Weekly"
-                   data-momo-show-teacher="true"
-                   data-momo-show-teacher-filter="false"
-                   data-momo-show-schedule-images="true"
-                   data-momo-apply-colors="true"
-                   data-momo-show-end-time="true"
-                   data-momo-primary-color="#c0a27d"
-                   data-momo-container=".momo-schedule-wrapper"
-                   data-momo-limit="5">
+    <!-- TIMETABLE - MOMO YOGA SCHEDULE WITH PAGINATION -->
+    <section class="booking-section section-pad" id="schedule">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="booking-card" data-reveal="">
+              <div class="booking-card-header">
+                <h3>This Week's Classes</h3>
+                <span class="booking-live">LIVE SCHEDULE</span>
               </div>
 
-              <!-- Pagination Controls -->
-              <nav class="momo-pagination momo-pagination-hidden" id="momoPagination"
-                   aria-label="Class schedule pagination">
-                <button type="button" class="prev" id="prevClassPage" aria-label="Previous class page">
-                  <i class="fas fa-chevron-left" aria-hidden="true"></i>
-                </button>
+              <!-- Momo Yoga Schedule Integration -->
+              <div class="momo-schedule-wrapper">
+                <div
+                  data-momo-schedule="https://www.momoyoga.com/mmstudio/"
+                  data-momo-view-type="Weekly"
+                  data-momo-show-teacher="true"
+                  data-momo-show-teacher-filter="false"
+                  data-momo-show-schedule-images="true"
+                  data-momo-apply-colors="true"
+                  data-momo-show-end-time="true"
+                  data-momo-primary-color="#c0a27d"
+                  data-momo-container=".momo-schedule-wrapper"
+                  data-momo-limit="5"
+                ></div>
 
-                <div class="momo-page-numbers" id="momoPageNumbers"></div>
+                <!-- Pagination Controls -->
+                <nav
+                  class="momo-pagination momo-pagination-hidden"
+                  id="momoPagination"
+                  aria-label="Class schedule pagination"
+                >
+                  <button
+                    type="button"
+                    class="prev"
+                    id="prevClassPage"
+                    aria-label="Previous class page"
+                  >
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                  </button>
 
-                <button type="button" class="next" id="nextClassPage" aria-label="Next class page">
-                  <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                </button>
-              </nav>
-              <p class="momo-pagination-status" id="momoPaginationStatus" aria-live="polite"></p>
-            </div>
+                  <div class="momo-page-numbers" id="momoPageNumbers"></div>
 
-            <div class="booking-card-footer text-center">
-              <p class="copy-muted mb-3" style="font-size: 0.85rem;">
-                <i class="fas fa-calendar-check me-1"></i>
-                View all upcoming classes and book your spot
-              </p>
-              <a href="schedule.html" class="schedule-view-all-btn">
-                View Full Schedule <i class="fas fa-arrow-right ms-2"></i>
-              </a>
+                  <button
+                    type="button"
+                    class="next"
+                    id="nextClassPage"
+                    aria-label="Next class page"
+                  >
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                  </button>
+                </nav>
+                <p
+                  class="momo-pagination-status"
+                  id="momoPaginationStatus"
+                  aria-live="polite"
+                ></p>
+              </div>
+
+              <div class="booking-card-footer text-center">
+                <p class="copy-muted mb-3" style="font-size: 0.85rem">
+                  <i class="fas fa-calendar-check me-1"></i>
+                  View all upcoming classes and book your spot
+                </p>
+                <a href="schedule.html" class="schedule-view-all-btn">
+                  View Full Schedule <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- GALLERY SECTION -->
-  <section aria-labelledby="studioGalleryTitle" class="mm-gallery-section section-pad section-soft" id="studioGallery">
-    <div class="container">
-      <div class="text-center mb-5" data-reveal="">
-        <span class="eyebrow">INSIDE MM PILATES</span>
-        <h2 class="section-title" id="studioGalleryTitle">Movement, connection and calm in every class.</h2>
-        <p class="copy-muted section-intro">
-          A glimpse into our studio experience, from focused reformer sessions to restorative movement and community
-          moments.
-        </p>
-      </div>
-      <div class="mm-gallery-carousel" data-mm-gallery="" data-reveal="">
-        <div aria-label="Pilates studio image gallery" class="mm-gallery-viewport" tabindex="0">
-          <div class="mm-gallery-track">
-            <figure class="mm-gallery-slide">
-              <img alt="Pilates class practising controlled movement" loading="lazy"
-                src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1200&amp;h=850&amp;fit=crop" />
-              <figcaption>Reformer Flow</figcaption>
-            </figure>
-            <figure class="mm-gallery-slide">
-              <img alt="Woman performing a focused Pilates exercise" loading="lazy"
-                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&amp;h=850&amp;fit=crop" />
-              <figcaption>Intentional Strength</figcaption>
-            </figure>
-            <figure class="mm-gallery-slide">
-              <img alt="Pilates mobility and stretching session" loading="lazy"
-                src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=1200&amp;h=850&amp;fit=crop" />
-              <figcaption>Stretch and Release</figcaption>
-            </figure>
-            <figure class="mm-gallery-slide">
-              <img alt="Calm mat Pilates practice" loading="lazy"
-                src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=1200&amp;h=850&amp;fit=crop" />
-              <figcaption>Mat Pilates</figcaption>
-            </figure>
-            <figure class="mm-gallery-slide">
-              <img alt="Private Pilates session with personalised guidance" loading="lazy"
-                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&amp;h=850&amp;fit=crop" />
-              <figcaption>Private Guidance</figcaption>
-            </figure>
-            <figure class="mm-gallery-slide">
-              <img alt="Studio member building strength and balance" loading="lazy"
-                src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200&amp;h=850&amp;fit=crop" />
-              <figcaption>Strength and Balance</figcaption>
-            </figure>
-            <figure class="mm-gallery-slide">
-              <img alt="Pilates community moving together" loading="lazy"
-                src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=1200&amp;h=850&amp;fit=crop" />
-              <figcaption>Community Movement</figcaption>
-            </figure>
-            <figure class="mm-gallery-slide">
-              <img alt="Restorative studio movement session" loading="lazy"
-                src="https://images.unsplash.com/photo-1603988363607-e1e4a66962c6?w=1200&amp;h=850&amp;fit=crop" />
-              <figcaption>Calm and Restore</figcaption>
-            </figure>
+    <!-- GALLERY SECTION -->
+    <section
+      aria-labelledby="studioGalleryTitle"
+      class="mm-gallery-section section-pad section-soft"
+      id="studioGallery"
+    >
+      <div class="container">
+        <div class="text-center mb-5" data-reveal="">
+          <span class="eyebrow">INSIDE MM PILATES</span>
+          <h2 class="section-title" id="studioGalleryTitle">
+            Movement, connection and calm in every class.
+          </h2>
+          <p class="copy-muted section-intro">
+            A glimpse into our studio experience, from focused reformer sessions
+            to restorative movement and community moments.
+          </p>
+        </div>
+        <div class="mm-gallery-carousel" data-mm-gallery="" data-reveal="">
+          <div
+            aria-label="Pilates studio image gallery"
+            class="mm-gallery-viewport"
+            tabindex="0"
+          >
+            <div class="mm-gallery-track">
+              <figure class="mm-gallery-slide">
+                <img
+                  alt="Image of the Reformer Pilates Room"
+                  loading="lazy"
+                  src="assets/images/reformer-room.jpg"
+                />
+                <figcaption>Reformer Pilates Room</figcaption>
+              </figure>
+              <figure class="mm-gallery-slide">
+                <img
+                  alt="Image of the Mat Pilates Room"
+                  loading="lazy"
+                  src="assets/images/Mat-room.jpg"
+                />
+                <figcaption>Mat Room</figcaption>
+              </figure>
+              <figure class="mm-gallery-slide">
+                <img
+                  alt="View of the reception"
+                  loading="lazy"
+                  src="assets/images/reception.jpg"
+                />
+                <figcaption>Reception</figcaption>
+              </figure>
+              <figure class="mm-gallery-slide">
+                <img
+                  alt="image of the studio cafe"
+                  loading="lazy"
+                  src="assets/images/cafe.jpg"
+                />
+                <figcaption>Cafe</figcaption>
+              </figure>
+              <figure class="mm-gallery-slide">
+                <img
+                  alt="Private Pilates session with personalised guidance"
+                  loading="lazy"
+                  src="assets/images/outdoor-area.jpg"
+                />
+                <figcaption>Outdoor Waiting Area</figcaption>
+              </figure>
+              <figure class="mm-gallery-slide">
+                <img
+                  alt="Overview of the building"
+                  loading="lazy"
+                  src="assets/images/overview.jpg"
+                />
+                <figcaption>Building overview</figcaption>
+              </figure>
+              <!-- <figure class="mm-gallery-slide">
+                <img
+                  alt="Pilates community moving together"
+                  loading="lazy"
+                  src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=1200&amp;h=850&amp;fit=crop"
+                />
+                <figcaption>Community Movement</figcaption>
+              </figure>
+              <figure class="mm-gallery-slide">
+                <img
+                  alt="Restorative studio movement session"
+                  loading="lazy"
+                  src="https://images.unsplash.com/photo-1603988363607-e1e4a66962c6?w=1200&amp;h=850&amp;fit=crop"
+                />
+                <figcaption>Calm and Restore</figcaption>
+              </figure> -->
+            </div>
+          </div>
+          <button
+            aria-label="Show previous gallery image"
+            class="mm-gallery-arrow mm-gallery-prev"
+            type="button"
+          >
+            <i aria-hidden="true" class="fas fa-arrow-left"></i>
+          </button>
+          <button
+            aria-label="Show next gallery image"
+            class="mm-gallery-arrow mm-gallery-next"
+            type="button"
+          >
+            <i aria-hidden="true" class="fas fa-arrow-right"></i>
+          </button>
+          <div class="mm-gallery-controls">
+            <div
+              aria-label="Choose gallery image"
+              class="mm-gallery-dots"
+            ></div>
+            <span aria-live="polite" class="mm-gallery-counter">1 / 8</span>
           </div>
         </div>
-        <button aria-label="Show previous gallery image" class="mm-gallery-arrow mm-gallery-prev" type="button">
-          <i aria-hidden="true" class="fas fa-arrow-left"></i>
-        </button>
-        <button aria-label="Show next gallery image" class="mm-gallery-arrow mm-gallery-next" type="button">
-          <i aria-hidden="true" class="fas fa-arrow-right"></i>
-        </button>
-        <div class="mm-gallery-controls">
-          <div aria-label="Choose gallery image" class="mm-gallery-dots"></div>
-          <span aria-live="polite" class="mm-gallery-counter">1 / 8</span>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- COMMUNITY / TESTIMONIALS -->
-  <!-- <section class="section-pad" id="community">
+    <!-- COMMUNITY / TESTIMONIALS -->
+    <!-- <section class="section-pad" id="community">
     <div class="container">
       <div class="text-center mb-5">
         <span class="eyebrow">OUR COMMUNITY</span>
@@ -817,589 +950,681 @@
     </div>
   </section> -->
 
-  <!-- CTA -->
-  <section class="section-pad section-soft">
-    <div class="container">
-      <div class="cta-band text-center" data-reveal="">
-        <span class="eyebrow">BEGIN TODAY</span>
-        <h2 class="section-title mb-3">Start your Pilates journey with us.</h2>
-        <p class="copy-muted mb-4">
-          Book your first session and experience movement that feels intentional, calming, and strong.
-        </p>
-        <a class="btn-muse" href="schedule.html">Book Now</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer" id="contact">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <img alt="MM Pilates Logo" class="footer-logo mb-3" src="assets/images/mm-logo.png" />
-          <p class="copy-muted">
-            Real Pilates for Real People. A calm, intentional studio designed to
-            help you move better and feel better.
+    <!-- CTA -->
+    <section class="section-pad section-soft">
+      <div class="container">
+        <div class="cta-band text-center" data-reveal="">
+          <span class="eyebrow">BEGIN TODAY</span>
+          <h2 class="section-title mb-3">
+            Start your Pilates journey with us.
+          </h2>
+          <p class="copy-muted mb-4">
+            Book your first session and experience movement that feels
+            intentional, calming, and strong.
           </p>
-          <div class="social-list mt-4">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a class="btn-muse" href="schedule.html">Book Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <img
+              alt="MM Pilates Logo"
+              class="footer-logo mb-3"
+              src="assets/images/mm-logo.png"
+            />
+            <p class="copy-muted">
+              Mindful Motion for everybody where movements meets intention.
+            </p>
+            <div class="social-list mt-4">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-2">
+            <p class="footer-title">Pages</p>
+            < class="list-unstyled d-grid gap-2">
+              <li><a href="#home">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="#classes">Classes</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="schedule.html">Schedule</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <p class="footer-title">Studio</p>
+            <ul class="list-unstyled d-grid gap-2">
+              <li>Reformer Pilates</li>
+              <li>Mat Pilates</li>
+              <li>Stretch &amp; Restore</li>
+              <li>Private Sessions</li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <p class="footer-title">Contact</p>
+            <ul class="list-unstyled d-grid gap-2">
+              <li>
+                <i class="fas fa-envelope me-2"></i> info@mmpilatesstudio.com
+              </li>
+              <li><i class="fas fa-phone me-2"></i> (234) 707 012 1290</li>
+              <li>
+                <i class="fas fa-location-dot me-2"></i>
+                Plot 5A Pinnock Beach Estate, Jakande, Lekki, Lagos, Nigeria
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="col-md-4 col-lg-2">
-          <p class="footer-title">Pages</p>
-          <ul class="list-unstyled d-grid gap-2">
-            <li><a href="#home">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#classes">Classes</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="schedule.html">Schedule</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4 col-lg-3">
-          <p class="footer-title">Studio</p>
-          <ul class="list-unstyled d-grid gap-2">
-            <li>Reformer Pilates</li>
-            <li>Mat Pilates</li>
-            <li>Stretch &amp; Release</li>
-            <li>Private Sessions</li>
-          </ul>
-        </div>
-        <div class="col-md-4 col-lg-3">
-          <p class="footer-title">Contact</p>
-          <ul class="list-unstyled d-grid gap-2">
-            <li><i class="fas fa-envelope me-2"></i> hello@mmpilates.com</li>
-            <li><i class="fas fa-phone me-2"></i> (02) 8123 4567</li>
-            <li><i class="fas fa-location-dot me-2"></i> Lekki, Lagos, Nigeria</li>
-          </ul>
+        <div class="copyright">
+          © <span data-year=""></span> MM Pilates Studio. All rights reserved.
         </div>
       </div>
-      <div class="copyright">
-        © <span data-year=""></span> MM Pilates Studio. All rights reserved.
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <button aria-label="Back to top" class="back-to-top" type="button">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+    <button aria-label="Back to top" class="back-to-top" type="button">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
-  <!-- Momo Yoga Schedule Integration Script -->
-  <script type="module" crossorigin="anonymous" src="https://cdn.momo.yoga/plugins/schedule-integration/schedule.js">
-  </script>
+    <!-- Momo Yoga Schedule Integration Script -->
+    <script
+      type="module"
+      crossorigin="anonymous"
+      src="https://cdn.momo.yoga/plugins/schedule-integration/schedule.js"
+    ></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script>
-    // ============================================================
-    // BASE FUNCTIONALITY
-    // ============================================================
-    document.addEventListener('DOMContentLoaded', () => {
-      const yearSpan = document.querySelector('[data-year]');
-      if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+    <script>
+      // ============================================================
+      // BASE FUNCTIONALITY
+      // ============================================================
+      document.addEventListener('DOMContentLoaded', () => {
+        const yearSpan = document.querySelector('[data-year]');
+        if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-      const navbar = document.querySelector('.navbar');
-      const backToTop = document.querySelector('.back-to-top');
+        const navbar = document.querySelector('.navbar');
+        const backToTop = document.querySelector('.back-to-top');
 
-      const updateUIOnScroll = () => {
-        const scrolled = window.scrollY > 20;
-        if (navbar) navbar.classList.toggle('scrolled', scrolled);
-        if (backToTop) backToTop.classList.toggle('show', window.scrollY > 320);
-      };
+        const updateUIOnScroll = () => {
+          const scrolled = window.scrollY > 20;
+          if (navbar) navbar.classList.toggle('scrolled', scrolled);
+          if (backToTop)
+            backToTop.classList.toggle('show', window.scrollY > 320);
+        };
 
-      updateUIOnScroll();
-      window.addEventListener('scroll', updateUIOnScroll, { passive: true });
+        updateUIOnScroll();
+        window.addEventListener('scroll', updateUIOnScroll, { passive: true });
 
-      if (backToTop) {
-        backToTop.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      }
-
-      const revealItems = document.querySelectorAll('[data-reveal]');
-      if ('IntersectionObserver' in window && revealItems.length) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('revealed');
-              observer.unobserve(entry.target);
-            }
+        if (backToTop) {
+          backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
           });
-        }, { threshold: 0.15 });
-
-        revealItems.forEach((item) => observer.observe(item));
-      } else {
-        revealItems.forEach((item) => item.classList.add('revealed'));
-      }
-
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener('click', function(event) {
-          const href = this.getAttribute('href');
-          if (href === '#') return;
-          const target = document.querySelector(href);
-          if (target) {
-            event.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
-      });
-    });
-
-    // ============================================================
-    // MOMO YOGA PAGINATION - 5 CLASSES PER PAGE
-    // ============================================================
-    document.addEventListener('DOMContentLoaded', function() {
-      const CLASSES_PER_PAGE = 5;
-      const momoScheduleRoot = document.querySelector('[data-momo-schedule]');
-      const momoPagination = document.getElementById('momoPagination');
-      const momoPageNumbers = document.getElementById('momoPageNumbers');
-      const momoPaginationStatus = document.getElementById('momoPaginationStatus');
-      const prevClassPage = document.getElementById('prevClassPage');
-      const nextClassPage = document.getElementById('nextClassPage');
-
-      if (!momoScheduleRoot) {
-        console.warn('Momo Yoga schedule container not found');
-        return;
-      }
-
-      let currentClassPage = 1;
-      let momoClassCards = [];
-      let paginationRefreshTimer;
-
-      /**
-       * Remove duplicate/nested matches so each class is counted once.
-       */
-      function removeNestedMatches(elements) {
-        const uniqueElements = [...new Set(elements)];
-
-        return uniqueElements.filter((element) => {
-          return !uniqueElements.some((otherElement) => {
-            return otherElement !== element && element.contains(otherElement);
-          });
-        });
-      }
-
-      /**
-       * Find the container belonging to one Book/Reserve button.
-       */
-      function findCardFromBookingAction(actionElement) {
-        let element = actionElement.parentElement;
-
-        while (element && element !== momoScheduleRoot) {
-          const bookingActions = [...element.querySelectorAll('a, button')].filter((control) => {
-            return /book|reserve|register|sign\s*up|join/i.test(control.textContent.trim());
-          });
-
-          const text = element.textContent.replace(/\s+/g, ' ').trim();
-          const hasUsefulClassDetails = text.length >= 12;
-
-          if (bookingActions.length === 1 && hasUsefulClassDetails) {
-            return element;
-          }
-
-          element = element.parentElement;
         }
 
-        return null;
-      }
-
-      /**
-       * Discover class cards after the external schedule has rendered.
-       */
-      function getMomoClassCards() {
-        if (!momoScheduleRoot) return [];
-
-        const bookingActions = [...momoScheduleRoot.querySelectorAll('a, button')].filter((control) => {
-          return /book|reserve|register|sign\s*up|join/i.test(control.textContent.trim());
-        });
-
-        const actionCards = removeNestedMatches(
-          bookingActions
-            .map(findCardFromBookingAction)
-            .filter(Boolean)
-        );
-
-        if (actionCards.length) {
-          return actionCards;
-        }
-
-        // Fallback selectors
-        const fallbackSelectors = [
-          '.momo-class-card',
-          '[data-momo-class]',
-          '[data-class-id]',
-          '[data-lesson-id]',
-          '[class*="class-card"]',
-          '[class*="schedule-item"]',
-          '[class*="lesson-card"]'
-        ];
-
-        for (const selector of fallbackSelectors) {
-          const matches = removeNestedMatches(
-            [...momoScheduleRoot.querySelectorAll(selector)]
+        const revealItems = document.querySelectorAll('[data-reveal]');
+        if ('IntersectionObserver' in window && revealItems.length) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('revealed');
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.15 },
           );
 
-          if (matches.length) {
-            return matches;
-          }
+          revealItems.forEach((item) => observer.observe(item));
+        } else {
+          revealItems.forEach((item) => item.classList.add('revealed'));
         }
 
-        return [];
-      }
-
-      function createPageButton(pageNumber) {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.textContent = pageNumber;
-        button.setAttribute('aria-label', `Go to class page ${pageNumber}`);
-
-        if (pageNumber === currentClassPage) {
-          button.classList.add('active');
-          button.setAttribute('aria-current', 'page');
-        }
-
-        button.addEventListener('click', () => {
-          showClassPage(pageNumber, true);
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener('click', function (event) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            const target = document.querySelector(href);
+            if (target) {
+              event.preventDefault();
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          });
         });
+      });
 
-        return button;
-      }
+      // ============================================================
+      // MOMO YOGA PAGINATION - 5 CLASSES PER PAGE
+      // ============================================================
+      document.addEventListener('DOMContentLoaded', function () {
+        const CLASSES_PER_PAGE = 5;
+        const momoScheduleRoot = document.querySelector('[data-momo-schedule]');
+        const momoPagination = document.getElementById('momoPagination');
+        const momoPageNumbers = document.getElementById('momoPageNumbers');
+        const momoPaginationStatus = document.getElementById(
+          'momoPaginationStatus',
+        );
+        const prevClassPage = document.getElementById('prevClassPage');
+        const nextClassPage = document.getElementById('nextClassPage');
 
-      function createPageDots() {
-        const dots = document.createElement('span');
-        dots.className = 'page-dots';
-        dots.textContent = '…';
-        dots.setAttribute('aria-hidden', 'true');
-        return dots;
-      }
+        if (!momoScheduleRoot) {
+          console.warn('Momo Yoga schedule container not found');
+          return;
+        }
 
-      function renderClassPageNumbers(totalPages) {
-        momoPageNumbers.innerHTML = '';
+        let currentClassPage = 1;
+        let momoClassCards = [];
+        let paginationRefreshTimer;
 
-        if (totalPages <= 5) {
-          for (let page = 1; page <= totalPages; page++) {
+        /**
+         * Remove duplicate/nested matches so each class is counted once.
+         */
+        function removeNestedMatches(elements) {
+          const uniqueElements = [...new Set(elements)];
+
+          return uniqueElements.filter((element) => {
+            return !uniqueElements.some((otherElement) => {
+              return otherElement !== element && element.contains(otherElement);
+            });
+          });
+        }
+
+        /**
+         * Find the container belonging to one Book/Reserve button.
+         */
+        function findCardFromBookingAction(actionElement) {
+          let element = actionElement.parentElement;
+
+          while (element && element !== momoScheduleRoot) {
+            const bookingActions = [
+              ...element.querySelectorAll('a, button'),
+            ].filter((control) => {
+              return /book|reserve|register|sign\s*up|join/i.test(
+                control.textContent.trim(),
+              );
+            });
+
+            const text = element.textContent.replace(/\s+/g, ' ').trim();
+            const hasUsefulClassDetails = text.length >= 12;
+
+            if (bookingActions.length === 1 && hasUsefulClassDetails) {
+              return element;
+            }
+
+            element = element.parentElement;
+          }
+
+          return null;
+        }
+
+        /**
+         * Discover class cards after the external schedule has rendered.
+         */
+        function getMomoClassCards() {
+          if (!momoScheduleRoot) return [];
+
+          const bookingActions = [
+            ...momoScheduleRoot.querySelectorAll('a, button'),
+          ].filter((control) => {
+            return /book|reserve|register|sign\s*up|join/i.test(
+              control.textContent.trim(),
+            );
+          });
+
+          const actionCards = removeNestedMatches(
+            bookingActions.map(findCardFromBookingAction).filter(Boolean),
+          );
+
+          if (actionCards.length) {
+            return actionCards;
+          }
+
+          // Fallback selectors
+          const fallbackSelectors = [
+            '.momo-class-card',
+            '[data-momo-class]',
+            '[data-class-id]',
+            '[data-lesson-id]',
+            '[class*="class-card"]',
+            '[class*="schedule-item"]',
+            '[class*="lesson-card"]',
+          ];
+
+          for (const selector of fallbackSelectors) {
+            const matches = removeNestedMatches([
+              ...momoScheduleRoot.querySelectorAll(selector),
+            ]);
+
+            if (matches.length) {
+              return matches;
+            }
+          }
+
+          return [];
+        }
+
+        function createPageButton(pageNumber) {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.textContent = pageNumber;
+          button.setAttribute('aria-label', `Go to class page ${pageNumber}`);
+
+          if (pageNumber === currentClassPage) {
+            button.classList.add('active');
+            button.setAttribute('aria-current', 'page');
+          }
+
+          button.addEventListener('click', () => {
+            showClassPage(pageNumber, true);
+          });
+
+          return button;
+        }
+
+        function createPageDots() {
+          const dots = document.createElement('span');
+          dots.className = 'page-dots';
+          dots.textContent = '…';
+          dots.setAttribute('aria-hidden', 'true');
+          return dots;
+        }
+
+        function renderClassPageNumbers(totalPages) {
+          momoPageNumbers.innerHTML = '';
+
+          if (totalPages <= 5) {
+            for (let page = 1; page <= totalPages; page++) {
+              momoPageNumbers.appendChild(createPageButton(page));
+            }
+            return;
+          }
+
+          const visiblePages = new Set([
+            1,
+            totalPages,
+            currentClassPage - 1,
+            currentClassPage,
+            currentClassPage + 1,
+          ]);
+
+          const orderedPages = [...visiblePages]
+            .filter((page) => page >= 1 && page <= totalPages)
+            .sort((a, b) => a - b);
+
+          orderedPages.forEach((page, index) => {
+            const previousPage = orderedPages[index - 1];
+
+            if (index > 0 && page - previousPage > 1) {
+              momoPageNumbers.appendChild(createPageDots());
+            }
+
             momoPageNumbers.appendChild(createPageButton(page));
-          }
-          return;
-        }
-
-        const visiblePages = new Set([
-          1,
-          totalPages,
-          currentClassPage - 1,
-          currentClassPage,
-          currentClassPage + 1
-        ]);
-
-        const orderedPages = [...visiblePages]
-          .filter((page) => page >= 1 && page <= totalPages)
-          .sort((a, b) => a - b);
-
-        orderedPages.forEach((page, index) => {
-          const previousPage = orderedPages[index - 1];
-
-          if (index > 0 && page - previousPage > 1) {
-            momoPageNumbers.appendChild(createPageDots());
-          }
-
-          momoPageNumbers.appendChild(createPageButton(page));
-        });
-      }
-
-      function updateClassPaginationStatus(startIndex, endIndex, totalClasses) {
-        if (!totalClasses) {
-          momoPaginationStatus.textContent = '';
-          return;
-        }
-
-        momoPaginationStatus.textContent =
-          `Showing classes ${startIndex + 1}-${endIndex} of ${totalClasses}`;
-      }
-
-      function showClassPage(pageNumber, shouldScroll = false) {
-        const totalClasses = momoClassCards.length;
-        const totalPages = Math.max(1, Math.ceil(totalClasses / CLASSES_PER_PAGE));
-
-        currentClassPage = Math.min(Math.max(pageNumber, 1), totalPages);
-
-        const startIndex = (currentClassPage - 1) * CLASSES_PER_PAGE;
-        const endIndex = Math.min(startIndex + CLASSES_PER_PAGE, totalClasses);
-
-        momoClassCards.forEach((card, index) => {
-          const shouldShow = index >= startIndex && index < endIndex;
-          card.style.setProperty('display', shouldShow ? '' : 'none', 'important');
-          card.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
-        });
-
-        const needsPagination = totalClasses > CLASSES_PER_PAGE;
-        momoPagination.classList.toggle('momo-pagination-hidden', !needsPagination);
-
-        prevClassPage.disabled = currentClassPage === 1;
-        nextClassPage.disabled = currentClassPage === totalPages;
-
-        renderClassPageNumbers(totalPages);
-        updateClassPaginationStatus(startIndex, endIndex, totalClasses);
-
-        if (shouldScroll) {
-          document.getElementById('schedule').scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
           });
         }
-      }
 
-      function refreshMomoClassPagination() {
-        const discoveredCards = getMomoClassCards();
-
-        if (!discoveredCards.length) {
-          momoPagination.classList.add('momo-pagination-hidden');
-          momoPaginationStatus.textContent = '';
-          return;
-        }
-
-        const scheduleChanged =
-          discoveredCards.length !== momoClassCards.length ||
-          discoveredCards.some((card, index) => card !== momoClassCards[index]);
-
-        momoClassCards = discoveredCards;
-
-        if (scheduleChanged) {
-          currentClassPage = 1;
-        }
-
-        showClassPage(currentClassPage);
-      }
-
-      prevClassPage.addEventListener('click', () => {
-        if (currentClassPage > 1) {
-          showClassPage(currentClassPage - 1, true);
-        }
-      });
-
-      nextClassPage.addEventListener('click', () => {
-        const totalPages = Math.ceil(momoClassCards.length / CLASSES_PER_PAGE);
-
-        if (currentClassPage < totalPages) {
-          showClassPage(currentClassPage + 1, true);
-        }
-      });
-
-      if (momoScheduleRoot) {
-        const momoScheduleObserver = new MutationObserver(() => {
-          clearTimeout(paginationRefreshTimer);
-          paginationRefreshTimer = setTimeout(refreshMomoClassPagination, 150);
-        });
-
-        momoScheduleObserver.observe(momoScheduleRoot, {
-          childList: true,
-          subtree: true
-        });
-
-        // Run immediately and retry while the external schedule loads.
-        refreshMomoClassPagination();
-        setTimeout(refreshMomoClassPagination, 1000);
-        setTimeout(refreshMomoClassPagination, 2500);
-        setTimeout(refreshMomoClassPagination, 5000);
-      }
-
-      console.log('Momo Yoga pagination initialized: 5 classes per page');
-    });
-
-    // ============================================================
-    // GALLERY CAROUSEL
-    // ============================================================
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll("[data-mm-gallery]").forEach((carousel) => {
-        const viewport = carousel.querySelector(".mm-gallery-viewport");
-        const track = carousel.querySelector(".mm-gallery-track");
-        const slides = Array.from(carousel.querySelectorAll(".mm-gallery-slide"));
-        const prevButton = carousel.querySelector(".mm-gallery-prev");
-        const nextButton = carousel.querySelector(".mm-gallery-next");
-        const dotsContainer = carousel.querySelector(".mm-gallery-dots");
-        const counter = carousel.querySelector(".mm-gallery-counter");
-
-        if (!viewport || !track || slides.length === 0) return;
-
-        let index = 0;
-        let timer = null;
-        let touchStartX = 0;
-        let touchDeltaX = 0;
-        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-        const visibleSlides = () => window.innerWidth <= 575 ? 1 : window.innerWidth <= 991 ? 2 : 3;
-        const maxIndex = () => Math.max(0, slides.length - visibleSlides());
-        const pageCount = () => maxIndex() + 1;
-
-        const rebuildDots = () => {
-          dotsContainer.innerHTML = "";
-          for (let dotIndex = 0; dotIndex < pageCount(); dotIndex += 1) {
-            const dot = document.createElement("button");
-            dot.type = "button";
-            dot.className = "mm-gallery-dot";
-            dot.setAttribute("aria-label", `Show gallery position ${dotIndex + 1}`);
-            dot.addEventListener("click", () => { index = dotIndex;
-              update();
-              restartAutoplay(); });
-            dotsContainer.appendChild(dot);
+        function updateClassPaginationStatus(
+          startIndex,
+          endIndex,
+          totalClasses,
+        ) {
+          if (!totalClasses) {
+            momoPaginationStatus.textContent = '';
+            return;
           }
-        };
 
-        const update = () => {
-          index = Math.min(Math.max(index, 0), maxIndex());
-          const gap = parseFloat(getComputedStyle(track).gap) || 0;
-          const step = slides[0].getBoundingClientRect().width + gap;
-          track.style.transform = `translate3d(${-index * step}px, 0, 0)`;
-          Array.from(dotsContainer.children).forEach((dot, dotIndex) => {
-            const active = dotIndex === index;
-            dot.classList.toggle("is-active", active);
-            dot.setAttribute("aria-current", active ? "true" : "false");
+          momoPaginationStatus.textContent = `Showing classes ${startIndex + 1}-${endIndex} of ${totalClasses}`;
+        }
+
+        function showClassPage(pageNumber, shouldScroll = false) {
+          const totalClasses = momoClassCards.length;
+          const totalPages = Math.max(
+            1,
+            Math.ceil(totalClasses / CLASSES_PER_PAGE),
+          );
+
+          currentClassPage = Math.min(Math.max(pageNumber, 1), totalPages);
+
+          const startIndex = (currentClassPage - 1) * CLASSES_PER_PAGE;
+          const endIndex = Math.min(
+            startIndex + CLASSES_PER_PAGE,
+            totalClasses,
+          );
+
+          momoClassCards.forEach((card, index) => {
+            const shouldShow = index >= startIndex && index < endIndex;
+            card.style.setProperty(
+              'display',
+              shouldShow ? '' : 'none',
+              'important',
+            );
+            card.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
           });
-          if (counter) counter.textContent = `${index + 1} / ${pageCount()}`;
-        };
 
-        const goNext = () => { index = index >= maxIndex() ? 0 : index + 1;
-          update(); };
-        const goPrevious = () => { index = index <= 0 ? maxIndex() : index - 1;
-          update(); };
-        const stopAutoplay = () => { if (timer) { window.clearInterval(timer);
-            timer = null; } };
-        const startAutoplay = () => {
-          stopAutoplay();
-          if (reducedMotion.matches || document.hidden || slides.length <= visibleSlides()) return;
-          timer = window.setInterval(goNext, 4200);
-        };
-        const restartAutoplay = () => { stopAutoplay();
-          startAutoplay(); };
+          const needsPagination = totalClasses > CLASSES_PER_PAGE;
+          momoPagination.classList.toggle(
+            'momo-pagination-hidden',
+            !needsPagination,
+          );
 
-        prevButton?.addEventListener("click", () => { goPrevious();
-          restartAutoplay(); });
-        nextButton?.addEventListener("click", () => { goNext();
-          restartAutoplay(); });
+          prevClassPage.disabled = currentClassPage === 1;
+          nextClassPage.disabled = currentClassPage === totalPages;
 
-        viewport.addEventListener("keydown", (event) => {
-          if (event.key === "ArrowLeft") { event.preventDefault();
+          renderClassPageNumbers(totalPages);
+          updateClassPaginationStatus(startIndex, endIndex, totalClasses);
+
+          if (shouldScroll) {
+            document.getElementById('schedule').scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
+          }
+        }
+
+        function refreshMomoClassPagination() {
+          const discoveredCards = getMomoClassCards();
+
+          if (!discoveredCards.length) {
+            momoPagination.classList.add('momo-pagination-hidden');
+            momoPaginationStatus.textContent = '';
+            return;
+          }
+
+          const scheduleChanged =
+            discoveredCards.length !== momoClassCards.length ||
+            discoveredCards.some(
+              (card, index) => card !== momoClassCards[index],
+            );
+
+          momoClassCards = discoveredCards;
+
+          if (scheduleChanged) {
+            currentClassPage = 1;
+          }
+
+          showClassPage(currentClassPage);
+        }
+
+        prevClassPage.addEventListener('click', () => {
+          if (currentClassPage > 1) {
+            showClassPage(currentClassPage - 1, true);
+          }
+        });
+
+        nextClassPage.addEventListener('click', () => {
+          const totalPages = Math.ceil(
+            momoClassCards.length / CLASSES_PER_PAGE,
+          );
+
+          if (currentClassPage < totalPages) {
+            showClassPage(currentClassPage + 1, true);
+          }
+        });
+
+        if (momoScheduleRoot) {
+          const momoScheduleObserver = new MutationObserver(() => {
+            clearTimeout(paginationRefreshTimer);
+            paginationRefreshTimer = setTimeout(
+              refreshMomoClassPagination,
+              150,
+            );
+          });
+
+          momoScheduleObserver.observe(momoScheduleRoot, {
+            childList: true,
+            subtree: true,
+          });
+
+          // Run immediately and retry while the external schedule loads.
+          refreshMomoClassPagination();
+          setTimeout(refreshMomoClassPagination, 1000);
+          setTimeout(refreshMomoClassPagination, 2500);
+          setTimeout(refreshMomoClassPagination, 5000);
+        }
+
+        console.log('Momo Yoga pagination initialized: 5 classes per page');
+      });
+
+      // ============================================================
+      // GALLERY CAROUSEL
+      // ============================================================
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[data-mm-gallery]').forEach((carousel) => {
+          const viewport = carousel.querySelector('.mm-gallery-viewport');
+          const track = carousel.querySelector('.mm-gallery-track');
+          const slides = Array.from(
+            carousel.querySelectorAll('.mm-gallery-slide'),
+          );
+          const prevButton = carousel.querySelector('.mm-gallery-prev');
+          const nextButton = carousel.querySelector('.mm-gallery-next');
+          const dotsContainer = carousel.querySelector('.mm-gallery-dots');
+          const counter = carousel.querySelector('.mm-gallery-counter');
+
+          if (!viewport || !track || slides.length === 0) return;
+
+          let index = 0;
+          let timer = null;
+          let touchStartX = 0;
+          let touchDeltaX = 0;
+          const reducedMotion = window.matchMedia(
+            '(prefers-reduced-motion: reduce)',
+          );
+
+          const visibleSlides = () =>
+            window.innerWidth <= 575 ? 1 : window.innerWidth <= 991 ? 2 : 3;
+          const maxIndex = () => Math.max(0, slides.length - visibleSlides());
+          const pageCount = () => maxIndex() + 1;
+
+          const rebuildDots = () => {
+            dotsContainer.innerHTML = '';
+            for (let dotIndex = 0; dotIndex < pageCount(); dotIndex += 1) {
+              const dot = document.createElement('button');
+              dot.type = 'button';
+              dot.className = 'mm-gallery-dot';
+              dot.setAttribute(
+                'aria-label',
+                `Show gallery position ${dotIndex + 1}`,
+              );
+              dot.addEventListener('click', () => {
+                index = dotIndex;
+                update();
+                restartAutoplay();
+              });
+              dotsContainer.appendChild(dot);
+            }
+          };
+
+          const update = () => {
+            index = Math.min(Math.max(index, 0), maxIndex());
+            const gap = parseFloat(getComputedStyle(track).gap) || 0;
+            const step = slides[0].getBoundingClientRect().width + gap;
+            track.style.transform = `translate3d(${-index * step}px, 0, 0)`;
+            Array.from(dotsContainer.children).forEach((dot, dotIndex) => {
+              const active = dotIndex === index;
+              dot.classList.toggle('is-active', active);
+              dot.setAttribute('aria-current', active ? 'true' : 'false');
+            });
+            if (counter) counter.textContent = `${index + 1} / ${pageCount()}`;
+          };
+
+          const goNext = () => {
+            index = index >= maxIndex() ? 0 : index + 1;
+            update();
+          };
+          const goPrevious = () => {
+            index = index <= 0 ? maxIndex() : index - 1;
+            update();
+          };
+          const stopAutoplay = () => {
+            if (timer) {
+              window.clearInterval(timer);
+              timer = null;
+            }
+          };
+          const startAutoplay = () => {
+            stopAutoplay();
+            if (
+              reducedMotion.matches ||
+              document.hidden ||
+              slides.length <= visibleSlides()
+            )
+              return;
+            timer = window.setInterval(goNext, 4200);
+          };
+          const restartAutoplay = () => {
+            stopAutoplay();
+            startAutoplay();
+          };
+
+          prevButton?.addEventListener('click', () => {
             goPrevious();
-            restartAutoplay(); }
-          if (event.key === "ArrowRight") { event.preventDefault();
+            restartAutoplay();
+          });
+          nextButton?.addEventListener('click', () => {
             goNext();
-            restartAutoplay(); }
-        });
+            restartAutoplay();
+          });
 
-        carousel.addEventListener("mouseenter", stopAutoplay);
-        carousel.addEventListener("mouseleave", startAutoplay);
-        carousel.addEventListener("focusin", stopAutoplay);
-        carousel.addEventListener("focusout", startAutoplay);
+          viewport.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft') {
+              event.preventDefault();
+              goPrevious();
+              restartAutoplay();
+            }
+            if (event.key === 'ArrowRight') {
+              event.preventDefault();
+              goNext();
+              restartAutoplay();
+            }
+          });
 
-        viewport.addEventListener("touchstart", (event) => {
-          touchStartX = event.touches[0].clientX;
-          touchDeltaX = 0;
-          stopAutoplay();
-        }, { passive: true });
+          carousel.addEventListener('mouseenter', stopAutoplay);
+          carousel.addEventListener('mouseleave', startAutoplay);
+          carousel.addEventListener('focusin', stopAutoplay);
+          carousel.addEventListener('focusout', startAutoplay);
 
-        viewport.addEventListener("touchmove", (event) => {
-          touchDeltaX = event.touches[0].clientX - touchStartX;
-        }, { passive: true });
+          viewport.addEventListener(
+            'touchstart',
+            (event) => {
+              touchStartX = event.touches[0].clientX;
+              touchDeltaX = 0;
+              stopAutoplay();
+            },
+            { passive: true },
+          );
 
-        viewport.addEventListener("touchend", () => {
-          if (Math.abs(touchDeltaX) > 45) touchDeltaX < 0 ? goNext() : goPrevious();
+          viewport.addEventListener(
+            'touchmove',
+            (event) => {
+              touchDeltaX = event.touches[0].clientX - touchStartX;
+            },
+            { passive: true },
+          );
+
+          viewport.addEventListener('touchend', () => {
+            if (Math.abs(touchDeltaX) > 45)
+              touchDeltaX < 0 ? goNext() : goPrevious();
+            startAutoplay();
+          });
+
+          document.addEventListener('visibilitychange', () =>
+            document.hidden ? stopAutoplay() : startAutoplay(),
+          );
+          reducedMotion.addEventListener?.('change', startAutoplay);
+
+          let resizeTimer;
+          window.addEventListener('resize', () => {
+            window.clearTimeout(resizeTimer);
+            resizeTimer = window.setTimeout(() => {
+              index = Math.min(index, maxIndex());
+              rebuildDots();
+              update();
+              startAutoplay();
+            }, 140);
+          });
+
+          rebuildDots();
+          update();
           startAutoplay();
         });
-
-        document.addEventListener("visibilitychange", () => document.hidden ? stopAutoplay() : startAutoplay());
-        reducedMotion.addEventListener?.("change", startAutoplay);
-
-        let resizeTimer;
-        window.addEventListener("resize", () => {
-          window.clearTimeout(resizeTimer);
-          resizeTimer = window.setTimeout(() => {
-            index = Math.min(index, maxIndex());
-            rebuildDots();
-            update();
-            startAutoplay();
-          }, 140);
-        });
-
-        rebuildDots();
-        update();
-        startAutoplay();
       });
-    });
 
-    // ============================================================
-    // LIGHTBOX
-    // ============================================================
-    document.addEventListener('DOMContentLoaded', function() {
+      // ============================================================
+      // LIGHTBOX
+      // ============================================================
+      document.addEventListener('DOMContentLoaded', function () {
+        const slides = Array.from(
+          document.querySelectorAll('.mm-gallery-slide img'),
+        );
+        if (!slides.length) return;
 
-      const slides = Array.from(document.querySelectorAll('.mm-gallery-slide img'));
-      if (!slides.length) return;
+        const box = document.createElement('div');
+        box.className = 'mm-image-lightbox';
 
-      const box = document.createElement('div');
-      box.className = 'mm-image-lightbox';
-
-      box.innerHTML = `
+        box.innerHTML = `
         <button class="mm-image-lightbox-nav mm-image-lightbox-prev">&#10094;</button>
         <img src="" alt="Gallery image preview">
         <button class="mm-image-lightbox-nav mm-image-lightbox-next">&#10095;</button>
         <span class="mm-image-lightbox-close">&times;</span>
       `;
 
-      document.body.appendChild(box);
+        document.body.appendChild(box);
 
-      const preview = box.querySelector('img');
-      const next = box.querySelector('.mm-image-lightbox-next');
-      const prev = box.querySelector('.mm-image-lightbox-prev');
+        const preview = box.querySelector('img');
+        const next = box.querySelector('.mm-image-lightbox-next');
+        const prev = box.querySelector('.mm-image-lightbox-prev');
 
-      let current = 0;
+        let current = 0;
 
-      function showImage() {
-        preview.src = slides[current].src;
-      }
+        function showImage() {
+          preview.src = slides[current].src;
+        }
 
-      slides.forEach((img, index) => {
-        img.parentElement.addEventListener('click', () => {
-          current = index;
+        slides.forEach((img, index) => {
+          img.parentElement.addEventListener('click', () => {
+            current = index;
+            showImage();
+            box.classList.add('active');
+          });
+        });
+
+        function nextImage() {
+          current++;
+          if (current >= slides.length) current = 0;
           showImage();
-          box.classList.add('active');
+        }
+
+        function previousImage() {
+          current--;
+          if (current < 0) current = slides.length - 1;
+          showImage();
+        }
+
+        preview.addEventListener('click', nextImage);
+        next.addEventListener('click', nextImage);
+        prev.addEventListener('click', previousImage);
+
+        box.addEventListener('click', (e) => {
+          if (
+            e.target === box ||
+            e.target.classList.contains('mm-image-lightbox-close')
+          ) {
+            box.classList.remove('active');
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (!box.classList.contains('active')) return;
+
+          if (e.key === 'ArrowRight') nextImage();
+          if (e.key === 'ArrowLeft') previousImage();
+          if (e.key === 'Escape') box.classList.remove('active');
         });
       });
-
-      function nextImage() {
-        current++;
-        if (current >= slides.length) current = 0;
-        showImage();
-      }
-
-      function previousImage() {
-        current--;
-        if (current < 0) current = slides.length - 1;
-        showImage();
-      }
-
-      preview.addEventListener('click', nextImage);
-      next.addEventListener('click', nextImage);
-      prev.addEventListener('click', previousImage);
-
-      box.addEventListener('click', e => {
-        if (
-          e.target === box ||
-          e.target.classList.contains('mm-image-lightbox-close')
-        ) {
-          box.classList.remove('active');
-        }
-      });
-
-      document.addEventListener('keydown', e => {
-        if (!box.classList.contains('active')) return;
-
-        if (e.key === "ArrowRight") nextImage();
-        if (e.key === "ArrowLeft") previousImage();
-        if (e.key === "Escape") box.classList.remove('active');
-      });
-
-    });
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
