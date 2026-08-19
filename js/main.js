@@ -1,3 +1,5 @@
+const { act } = require('react');
+
 document.addEventListener('DOMContentLoaded', () => {
   const yearSpan = document.querySelector('[data-year]');
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
@@ -20,14 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const revealItems = document.querySelectorAll('[data-reveal]');
   if ('IntersectionObserver' in window && revealItems.length) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
     revealItems.forEach((item) => observer.observe(item));
   } else {
     revealItems.forEach((item) => item.classList.add('revealed'));
@@ -38,8 +43,24 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form && status) {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
-      status.innerHTML = '<div class="alert alert-success border-0 mb-0" style="background: rgba(164,137,102,0.12); color: #5b4a38;">Thanks for reaching out. Your enquiry has been captured in this front-end demo. Connect the form to Formspree, Netlify Forms, or your backend to make it fully live.</div>';
+      status.innerHTML =
+        '<div class="alert alert-success border-0 mb-0" style="background: rgba(164,137,102,0.12); color: #5b4a38;">Thanks for reaching out. Your enquiry has been captured in this front-end demo. Connect the form to Formspree, Netlify Forms, or your backend to make it fully live.</div>';
       form.reset();
     });
   }
 });
+
+// Hero photo slideshow crossfade
+(function () {
+  const slides = document.querySelectorAll('.hero-slide');
+  if (!slides.length) return;
+
+  let current = 0;
+  const intervalMs = 6000; // 6 seconds per photo
+
+  setInterval(() => {
+    slides[current].classList.remove('is-active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('is-active');
+  }, intervalMs);
+})();
