@@ -75,86 +75,8 @@
       }
 
       /* ============================================================
-   NAVBAR
+   NAVBAR — now inherited from css/style.css, not redefined here
    ============================================================ */
-      .navbar {
-        padding: 16px 0;
-        background: rgba(10, 11, 14, 0.92);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        transition: var(--transition);
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-      }
-
-      .navbar.scrolled {
-        background: rgba(10, 11, 14, 0.98);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-      }
-
-      .navbar .nav-logo {
-        height: 40px;
-        width: auto;
-      }
-
-      .navbar .nav-link {
-        color: var(--muse-text) !important;
-        font-size: 0.85rem;
-        font-weight: 500;
-        padding: 0.5rem 1rem;
-        transition: var(--transition);
-        position: relative;
-      }
-
-      .navbar .nav-link:hover {
-        color: var(--muse-gold) !important;
-      }
-
-      .navbar .nav-link.active {
-        color: var(--muse-gold) !important;
-      }
-
-      .navbar .nav-link.active::after {
-        content: '';
-        position: absolute;
-        left: 1rem;
-        right: 1rem;
-        bottom: 0;
-        height: 2px;
-        border-radius: 999px;
-        background: var(--muse-gold);
-      }
-
-      .btn-muse {
-        display: inline-block;
-        padding: 0.6rem 1.8rem;
-        border-radius: 30px;
-        background: var(--muse-gold);
-        color: var(--muse-dark);
-        font-weight: 600;
-        font-size: 0.85rem;
-        text-decoration: none;
-        transition: var(--transition);
-        border: none;
-        cursor: pointer;
-      }
-
-      .btn-muse:hover {
-        background: var(--muse-gold-hover);
-        color: var(--muse-dark);
-        transform: translateY(-2px);
-      }
-
-      .navbar-toggler {
-        border-color: rgba(255, 255, 255, 0.1);
-      }
-
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-      }
 
       /* ============================================================
    HERO
@@ -405,111 +327,9 @@
       }
 
       /* ============================================================
-   FOOTER
+   FOOTER, SOCIAL, COPYRIGHT, BACK-TO-TOP
+   — now inherited from css/style.css, not redefined here
    ============================================================ */
-      .footer {
-        padding: 60px 0 30px;
-        background: var(--muse-dark);
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-      }
-
-      .footer-logo {
-        height: 40px;
-        width: auto;
-      }
-
-      .footer-title {
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: var(--muse-text);
-        margin-bottom: 1rem;
-      }
-
-      .footer ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .footer ul li {
-        margin-bottom: 0.5rem;
-      }
-
-      .footer ul li a,
-      .footer ul li {
-        color: var(--muse-text-muted);
-        text-decoration: none;
-        font-size: 0.85rem;
-        transition: var(--transition);
-      }
-
-      .footer ul li a:hover {
-        color: var(--muse-gold);
-      }
-
-      .copy-muted {
-        color: var(--muse-text-muted);
-        font-size: 0.9rem;
-        line-height: 1.6;
-      }
-
-      .social-list {
-        display: flex;
-        gap: 1rem;
-      }
-
-      .social-list a {
-        color: var(--muse-text-muted);
-        font-size: 1.2rem;
-        transition: var(--transition);
-      }
-
-      .social-list a:hover {
-        color: var(--muse-gold);
-      }
-
-      .copyright {
-        margin-top: 40px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-        text-align: center;
-        color: var(--muse-text-muted);
-        font-size: 0.8rem;
-        opacity: 0.6;
-      }
-
-      /* ============================================================
-   BACK TO TOP
-   ============================================================ */
-      .back-to-top {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: var(--muse-gold);
-        color: var(--muse-dark);
-        border: none;
-        font-size: 1.2rem;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .back-to-top.show {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .back-to-top:hover {
-        transform: translateY(-3px);
-        background: var(--muse-gold-hover);
-      }
 
       /* ============================================================
    RESPONSIVE
@@ -570,35 +390,9 @@
     </style>
 
     <style>
-      /* MM Pilates Index Style Integration */
-      :root {
-        --index-dark: #2c2f33;
-        --index-gold: #c0a27d;
-        --index-cream: #faf7f2;
-      }
-      body {
-        background: var(--index-cream) !important;
-      }
-      .navbar {
-        background: rgba(44, 47, 51, 0.92) !important;
-      }
-      .navbar.scrolled {
-        background: rgba(44, 47, 51, 0.98) !important;
-      }
-      .navbar .nav-link {
-        color: #fff !important;
-      }
-      .navbar .nav-link:hover,
-      .navbar .nav-link.active {
-        color: var(--index-gold) !important;
-      }
-      .btn-muse {
-        background: var(--index-gold) !important;
-        color: #2c2f33 !important;
-      }
-      .btn-muse:hover {
-        background: #d4b89b !important;
-      }
+      /* Page-specific accents unique to the Schedule page.
+         Navbar, footer, and buttons now come from css/style.css
+         like every other page — no more !important overrides here. */
       .schedule-hero {
         background: #2c2f33 !important;
       }
@@ -626,12 +420,6 @@
       .momo-card .momo-book-btn {
         background: #c0a27d !important;
         color: #2c2f33 !important;
-      }
-      .footer {
-        background: #2c2f33 !important;
-      }
-      .footer-title {
-        color: #fff !important;
       }
     </style>
   </head>
@@ -711,7 +499,7 @@
         <div class="momo-card" data-aos="fade-up">
           <!-- Momo Yoga Schedule Integration -->
           <div
-            data-momo-schedule="https://www.momoyoga.com/mmstudio/"
+            data-momo-schedule="https://www.momoyoga.com/mmpilatesstudio/"
             data-momo-view-type="Weekly"
             data-momo-show-teacher="true"
             data-momo-show-teacher-filter="true"
@@ -770,13 +558,24 @@
               class="footer-logo mb-3"
             />
             <p class="copy-muted">
-              Real Pilates for Real People. A calm, intentional studio designed
-              to help you move better and feel better.
+              Movement with Intention.
             </p>
             <div class="social-list mt-4">
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-tiktok"></i></a>
+              <a
+                href="https://www.instagram.com/mmpilatesstudio.ng/"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@mmpilatestudio.ng"
+                target="_blank"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a
+                href="https://wa.me/234707121290?text=Hello%20MM%20Pilates%20Studio...."
+                target="-blank"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
             </div>
           </div>
 
@@ -804,12 +603,12 @@
           <div class="col-md-4 col-lg-3">
             <p class="footer-title">Contact</p>
             <ul class="list-unstyled d-grid gap-2">
-              <li>
-                <i class="fas fa-envelope me-2"></i> info@mmpilatesstudio.com
+               <li>
+                <i class="fas fa-envelope me-2"></i> hello@mmpilatesstudio.com
               </li>
-              <li><i class="fas fa-phone me-2"></i> (+234) 707 012 1290</li>
+              <li><i class="fas fa-phone me-2"></i> (234) 707 012 1290</li>
               <li>
-                <i class="fas fa-location-dot me-2"></i> Lekki, Lagos, Nigeria
+                <i class="fas fa-location-dot me-2"></i> Plot 5A Pinnock Beach Estate,<br>Jakande, Lekki, Lagos, Nigeria</br>
               </li>
             </ul>
           </div>

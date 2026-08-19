@@ -35,7 +35,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <!-- Packages Page CSS -->
-    <link rel="stylesheet" href="css/packages.css" />
+    <link rel="stylesheet" href="css/pricing.css" />
 
     <style>
       /* ------------------------------
@@ -814,6 +814,43 @@
       .private-card .terms-toggle .terms-content ul li strong {
         color: var(--muse-light);
       }
+
+      /* Payment info banner */
+    .payment-info-banner {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      max-width: 760px;
+      margin: 0 auto 3rem;
+      padding: 1.1rem 1.5rem;
+      background: rgba(192, 162, 125, 0.08);
+      border: 1px solid rgba(192, 162, 125, 0.3);
+      border-radius: 14px;
+      color: #ffffff;
+    }
+
+    .payment-info-banner i {
+      color: #c0a27d;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .payment-info-banner p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--muse-copy);
+    }
+
+    .payment-info-banner strong {
+      color: var(--muse-light);
+    }
+
+    @media (max-width: 575px) {
+      .payment-info-banner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
     </style>
   </head>
 
@@ -873,12 +910,26 @@
             <h1 class="hero-title">Class Packages</h1>
             <p class="hero-description">
               Choose the package that fits your rhythm. Perfect for those who
-              prefer flexibility without commitment.
+              prefer flexibility.
             </p>
           </div>
         </div>
       </div>
     </section>
+    </section>
+
+    <!-- Payment Info Banner -->
+    <div class="container">
+      <div class="payment-info-banner" data-aos="fade-up">
+        <i class="fas fa-info-circle"></i>
+        <p>
+          <strong>Reserve online, pay via Bank transfer.</strong> After booking, payment is made by bank transfer. Payment is required to secure your spot.
+        </p>
+      </div>
+    </div>
+
+    <!-- Packages Cards -->
+    <section class="packages-section">
 
     <!-- Packages Cards -->
     <section class="packages-section">
@@ -890,20 +941,20 @@
             <div class="package-icon">
               <i class="fas fa-calendar-day"></i>
             </div>
-            <h3 class="package-title">Drop-in</h3>
+            <h3 class="package-title">Drop-in Fitness class</h3>
             <p class="package-description">
               Perfect for trying us out or occasional visits
             </p>
             <div class="package-price">
               <span class="currency">₦</span>
-              <span class="price">27,500</span>
+              <span class="price">15,000</span>
               <span class="period">/ class</span>
             </div>
             <ul class="package-features">
               <li><i class="fas fa-check-circle"></i> Valid for 1 week</li>
             </ul>
             <a
-              href="https://www.momoyoga.com/mmstudio/product/205741/buy/login"
+              href="https://www.momoyoga.com/mmpilatesstudio/product/206158/buy/login?returnUrl=/mmpilatesstudio/member/order/create/choose-product" target="_blank"
               class="btn-package"
               >Buy Now</a
             >
@@ -926,10 +977,75 @@
                   </li>
                   <li>
                     <strong>Cancellation:</strong> Cancellations must be made at
-                    least 12 hours before class start time to retain credit.
+                    least 7 hours before class start time to retain credit.
                   </li>
                   <li>
-                    <strong>No-Show Policy:</strong> Failure to cancel within 12
+                    <strong>No-Show Policy:</strong> Failure to cancel within 7
+                    hours or no-show results in loss of class credit.
+                  </li>
+                  <li>
+                    <strong>Expiration:</strong> Unused classes expire after 1
+                    week with no refund or extension.
+                  </li>
+                  <li>
+                    <strong>Transferability:</strong> class passes are
+                    non-transferable and non-refundable.
+                  </li>
+                  <li>
+                    <strong>Studio Policy:</strong> The studio reserves the
+                    right to amend class schedules, instructors, or cancel
+                    classes when necessary.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+                    <!-- Drop-in Reformer Package -->
+          <div class="package-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="package-badge"></div>
+            <div class="package-icon">
+              <i class="fas fa-calendar-day"></i>
+            </div>
+            <h3 class="package-title">Drop-in Reformer Class</h3>
+            <p class="package-description">
+              Perfect for trying us out or occasional visits
+            </p>
+            <div class="package-price">
+              <span class="currency">₦</span>
+              <span class="price">25,000</span>
+              <span class="period">/ class</span>
+            </div>
+            <ul class="package-features">
+              <li><i class="fas fa-check-circle"></i> Valid for 1 week</li>
+            </ul>
+            <a
+              href="https://www.momoyoga.com/mmpilatesstudio/product/205741/buy/login"
+              class="btn-package" target="_blank"
+              >Buy Now</a
+            >
+
+            <!-- Terms & Conditions -->
+            <div class="terms-toggle">
+              <span class="terms-link" onclick="toggleTerms(this)"
+                >View Terms & Conditions <i class="fas fa-chevron-down"></i
+              ></span>
+              <div class="terms-content">
+                <h4>Drop-in Class Terms & Conditions</h4>
+                <ul>
+                  <li>
+                    <strong>Validity:</strong> Single class pass valid for 1
+                    week days from purchase date.
+                  </li>
+                  <li>
+                    <strong>Bookings:</strong> Advance booking is required and
+                    is subject to class availability.
+                  </li>
+                  <li>
+                    <strong>Cancellation:</strong> Cancellations must be made at
+                    least 7 hours before class start time to retain credit.
+                  </li>
+                  <li>
+                    <strong>No-Show Policy:</strong> Failure to cancel within 7
                     hours or no-show results in loss of class credit.
                   </li>
                   <li>
@@ -956,21 +1072,21 @@
             <div class="package-icon">
               <i class="fas fa-ticket-alt"></i>
             </div>
-            <h3 class="package-title">5 Session Pack</h3>
+            <h3 class="package-title">5-Reformer Class Pack</h3>
             <p class="package-description">
               Great for consistent weekly practice
             </p>
             <div class="package-price">
               <span class="currency">₦</span>
-              <span class="price">130,000</span>
+              <span class="price">120,000</span>
               <span class="period">/ 5 sessions</span>
             </div>
             <ul class="package-features">
               <li><i class="fas fa-check-circle"></i> Valid for 1 month</li>
             </ul>
             <a
-              href="https://www.momoyoga.com/mmstudio/product/191194/buy/confirm-order/8223170"
-              class="btn-package"
+              href="https://www.momoyoga.com/mmpilatesstudio/product/191194/buy/confirm-order/8223170"
+              class="btn-package" target="_blank"
               >Buy Now</a
             >
 
@@ -991,7 +1107,7 @@
                     is subject to class availability.
                   </li>
                   <li>
-                    <strong>Cancellation:</strong> 12-hour cancellation policy
+                    <strong>Cancellation:</strong> 7-hour cancellation policy
                     applies. Late cancellations count as class used.
                   </li>
                   <li>
@@ -1030,21 +1146,20 @@
             <div class="package-icon">
               <i class="fas fa-star"></i>
             </div>
-            <h3 class="package-title">10 Session Pack</h3>
+            <h3 class="package-title">10-Reformer Class Pack</h3>
             <p class="package-description">
               Best value for regular practitioners
             </p>
             <div class="package-price">
               <span class="currency">₦</span>
-              <span class="price">260,000</span>
+              <span class="price">235,000</span>
               <span class="period">/ 10 sessions</span>
-              <!-- <span class="savings">Save ₦20,000</span> -->
             </div>
             <ul class="package-features">
               <li><i class="fas fa-check-circle"></i> Valid for 1 month</li>
             </ul>
             <a
-              href="https://www.momoyoga.com/mmstudio/product/191194/buy/confirm-order/8223170"
+              href="https://www.momoyoga.com/mmpilatesstudio/product/206160/buy/login?returnUrl=/mmpilatesstudio/member/order/create/choose-product" target="_blank"
               class="btn-package featured-btn"
               >Buy Now</a
             >
@@ -1066,7 +1181,7 @@
                     is subject to class availability.
                   </li>
                   <li>
-                    <strong>Cancellation:</strong> 12-hour cancellation policy
+                    <strong>Cancellation:</strong> 7-hour cancellation policy
                     applies. Late cancellations count as class used.
                   </li>
                   <li>
@@ -1110,7 +1225,7 @@
             </div>
             <h3>Membership Session</h3>
             <div class="private-price">
-              ₦299,000 <span>/ for all classes</span>
+              ₦300,000 <span>/ for all classes</span>
             </div>
             <ul class="private-features">
               <li>
@@ -1124,7 +1239,7 @@
                 rehabilitation
               </li> -->
             </ul>
-            <a href="#schedule" class="btn-private">Buy Now</a>
+            <a href="https://www.momoyoga.com/mmpilatesstudio/product/206156/buy/login?returnUrl=/mmpilatesstudio/member/order/create/choose-product" target="_blank" class="btn-private">Buy Now</a>
 
             <!-- Terms & Conditions -->
             <div class="terms-toggle private-terms">
@@ -1179,6 +1294,19 @@
         <div class="faq-grid">
           <div class="faq-item" data-aos="fade-up">
             <div class="faq-question">
+              <h4>How do I pay for my classes?</h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                After you book through our schedule, you’ll receive a confirmation email with our bank details.
+                Kindly follow the instructions and make your payment to confirm your booking. Your spot is officially confirmed once payment has been received.
+                Bank details are sent to your email automatically.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" data-aos="fade-up">
+            <div class="faq-question">
               <h4>Can I share my class pack with friends?</h4>
               <i class="fas fa-chevron-down"></i>
             </div>
@@ -1213,7 +1341,7 @@
             </div>
             <div class="faq-answer">
               <p>
-                We require 12 hours notice for cancellations. Late cancellations
+                We require 7 hours notice for cancellations. Late cancellations
                 or no-shows will result in the loss of that class credit from
                 your pack. Private sessions require 24-hour notice.
               </p>
@@ -1272,7 +1400,7 @@
                 <div>
                   <h4>Cancellation Policy</h4>
                   <p>
-                    12-hour notice for group classes · 24-hour notice for
+                    7-hour notice for group classes · 24-hour notice for
                     private/duet sessions
                   </p>
                 </div>
@@ -1326,8 +1454,7 @@
                 <div>
                   <h4>Health &amp; Safety</h4>
                   <p>
-                    Complete health questionnaire before first class · Inform
-                    instructor of injuries or pregnancy
+                    Please inform the instructor of any injury or medical concern before class.
                   </p>
                 </div>
               </div>
@@ -1400,12 +1527,24 @@
               class="footer-logo mb-3"
             />
             <p class="copy-muted">
-              Mindful Motion for everybody where movements meets intention.
+             Movement with Intention.
             </p>
             <div class="social-list mt-4">
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
-              <a href="#"><i class="fab fa-tiktok"></i></a>
+              <a
+                href="https://www.instagram.com/mmpilatesstudio.ng/"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@mmpilatestudio.ng"
+                target="_blank"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a
+                href="https://wa.me/234707121290?text=Hello%20MM%20Pilates%20Studio...."
+                target="-blank"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
             </div>
           </div>
 
@@ -1433,10 +1572,12 @@
           <div class="col-md-4 col-lg-3">
             <p class="footer-title">Contact</p>
             <ul class="list-unstyled d-grid gap-2">
-              <li><i class="fas fa-envelope me-2"></i> hello@mmpilates.com</li>
-              <li><i class="fas fa-phone me-2"></i> (02) 8123 4567</li>
+               <li>
+                <i class="fas fa-envelope me-2"></i> hello@mmpilatesstudio.com
+              </li>
+              <li><i class="fas fa-phone me-2"></i> (234) 707 012 1290</li>
               <li>
-                <i class="fas fa-location-dot me-2"></i> Lekki, Lagos, Nigeria
+                <i class="fas fa-location-dot me-2"></i> Plot 5A Pinnock Beach Estate,<br>Jakande, Lekki, Lagos, Nigeria</br>
               </li>
             </ul>
           </div>

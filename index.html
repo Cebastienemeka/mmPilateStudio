@@ -585,19 +585,25 @@
 
     <!-- HERO -->
     <section class="hero hero-video-bg" id="home">
-      <video autoplay="" class="hero-bg-video" loop="" muted="" playsinline="">
-        <source src="assets/videos/heross-banner.mp4" type="video/mp4" />
-      </video>
+      <div class="hero-slideshow">
+        <div
+        class="hero-slide is-active"
+        style="background-image: url('assets/images/hero/hero-reception.jpg')">
+      </div>
+      <div 
+      class="hero-slide"
+      style="background-image: url('assets/images/hero/hero-reformer-room.jpg')"></div>
+      <div 
+      class="hero-slide"
+      style="background-image: url('assets/images/hero/hero-mat-room.jpg')"></div>
+      </div>
       <div class="hero-overlay"></div>
       <div class="container hero-content" style="padding-top: 180px">
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center">
             <div class="hero-copy" data-reveal="">
-              <span class="eyebrow">REAL PILATES FOR REAL PEOPLE</span>
+              <span class="eyebrow">MOVE WITH INTENTION</span>
               <h1>Find Your Flow.<br />Find Your Strength.</h1>
-              <p class="lead-text mx-auto" style="max-width: 700px">
-                Mindful Motion for everybody where movements meets intention.
-              </p>
               <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
                 <a class="btn-muse" href="schedule.html">Start Your Journey</a>
                 <a class="btn-muse-outline" href="classes.html"
@@ -730,7 +736,7 @@
               <!-- Momo Yoga Schedule Integration -->
               <div class="momo-schedule-wrapper">
                 <div
-                  data-momo-schedule="https://www.momoyoga.com/mmstudio/"
+                  data-momo-schedule="https://www.momoyoga.com/mmpilatesstudio/"
                   data-momo-view-type="Weekly"
                   data-momo-show-teacher="true"
                   data-momo-show-teacher-filter="false"
@@ -978,12 +984,24 @@
               src="assets/images/mm-logo.png"
             />
             <p class="copy-muted">
-              Mindful Motion for everybody where movements meets intention.
+              Movement with Intention.
             </p>
             <div class="social-list mt-4">
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
-              <a href="#"><i class="fab fa-tiktok"></i></a>
+              <a
+                href="https://www.instagram.com/mmpilatesstudio.ng/"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@mmpilatestudio.ng"
+                target="_blank"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a
+                href="https://wa.me/234707121290?text=Hello%20MM%20Pilates%20Studio...."
+                target="-blank"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
             </div>
           </div>
           <div class="col-md-4 col-lg-2">
@@ -1008,13 +1026,12 @@
           <div class="col-md-4 col-lg-3">
             <p class="footer-title">Contact</p>
             <ul class="list-unstyled d-grid gap-2">
-              <li>
-                <i class="fas fa-envelope me-2"></i> info@mmpilatesstudio.com
+               <li>
+                <i class="fas fa-envelope me-2"></i> hello@mmpilatesstudio.com
               </li>
               <li><i class="fas fa-phone me-2"></i> (234) 707 012 1290</li>
               <li>
-                <i class="fas fa-location-dot me-2"></i>
-                Plot 5A Pinnock Beach Estate, Jakande, Lekki, Lagos, Nigeria
+                <i class="fas fa-location-dot me-2"></i> Plot 5A Pinnock Beach Estate,<br>Jakande, Lekki, Lagos, Nigeria</br>
               </li>
             </ul>
           </div>
@@ -1623,6 +1640,23 @@
           if (e.key === 'ArrowLeft') previousImage();
           if (e.key === 'Escape') box.classList.remove('active');
         });
+      });
+
+      // ============================================================
+      // HERO PHOTO SLIDESHOW CROSSFADE
+      // ============================================================
+      document.addEventListener('DOMContentLoaded', () => {
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        if (!heroSlides.length) return;
+
+        let heroCurrent = 0;
+        const heroIntervalMs = 6000; // 6 seconds per photo
+
+        setInterval(() => {
+          heroSlides[heroCurrent].classList.remove('is-active');
+          heroCurrent = (heroCurrent + 1) % heroSlides.length;
+          heroSlides[heroCurrent].classList.add('is-active');
+        }, heroIntervalMs);
       });
     </script>
   </body>
