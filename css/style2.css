@@ -180,7 +180,7 @@ label {
 
 .nav-logo {
   width: 100px;
-  height: 48;
+  height: auto;
   object-fit: contain;
   transition: var(--transition);
 }
@@ -320,6 +320,22 @@ label {
 .hero-badge span {
   color: var(--muse-copy);
   font-size: 0.93rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom rgba(10, 11, 14, 0.55) 0%,
+    rgba(10, 11, 14, 0.35) 45%,
+    rgba(10, 11, 14, 0.65) 100%
+  );
 }
 
 /* ------------------------------
@@ -800,8 +816,8 @@ label {
 }
 
 @media (max-width: 767.98px) {
-  .nav-logo {
-    width: auto;
+  .nav-logo .footer-logo {
+    width: 85px;
   }
 
   .hero,
